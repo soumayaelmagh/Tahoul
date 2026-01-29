@@ -15,9 +15,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Tahoul Consulting",
-  description:
-    "A practical, executive-ready consulting partner for strategy, growth, and transformation.",
+  title: "Tahoul Management Consultancy",
+  description: "Transform your business with tailored consulting solutions.",
 };
 
 export default function RootLayout({

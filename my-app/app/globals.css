@@ -42,6 +42,57 @@ body {
   background-size: 22px 22px;
 }
 
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -50%;
+  width: 60%;
+  height: 300%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  transform: rotate(12deg);
+  animation: sheenSweep 6s ease-in-out infinite;
+}
+
+.pulse-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.pulse-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(70, 130, 180, 0.7) 45%,
+    rgba(48, 83, 118, 0.7) 55%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: pulseLine 4s ease-in-out infinite;
+}
+
+.accent-chip {
+  background: linear-gradient(
+    120deg,
+    rgba(70, 130, 180, 0.18),
+    rgba(48, 83, 118, 0.28)
+  );
+  border: 1px solid rgba(47, 81, 92, 0.18);
+}
+
 .fade-up {
   animation: fadeUp 0.8s ease both;
 }
@@ -81,6 +132,35 @@ body {
   }
   50% {
     transform: translateY(-12px);
+  }
+}
+
+@keyframes sheenSweep {
+  0%,
+  65% {
+    transform: translateX(-140%) rotate(12deg);
+    opacity: 0;
+  }
+  80%,
+  100% {
+    transform: translateX(220%) rotate(12deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulseLine {
+  0%,
+  30% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 

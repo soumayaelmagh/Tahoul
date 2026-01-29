@@ -1,0 +1,188 @@
+export const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "Our Mission", href: "#mission" },
+  { label: "Services", href: "#services" },
+  { label: "Team", href: "#team" },
+  { label: "Our Promise", href: "#promise" },
+];
+
+export const navCta = { label: "Contact Us", href: "#contact" };
+
+export const hero = {
+  eyebrow: "Transform your business with tailored consulting solutions",
+  title: "solutions designed for you, not for everyone before you",
+  primaryCta: { label: "Contact Us", href: "#contact" },
+  secondaryCta: { label: "Our Services", href: "#services" },
+  tags: [
+    "Strategy",
+    "Organizational Excellence",
+    "Corporate Governance",
+    "MARKETING & COMMUNICATION",
+    "Research & Studies",
+  ],
+};
+
+export const whoWeAre = {
+  title: "Who We Are",
+  headline: "A leading Saudi consulting firm.",
+  body:
+    "A leading Saudi consulting firm, aiming to provide innovative and sustainable solutions, adding value to its clients by leveraging relevant knowledge and expertise to help them achieve various strategic objectives and enhance their competitive edge.",
+  tags: [
+    "Strategy",
+    "Organizational Excellence",
+    "Corporate Governance",
+    "MARKETING & COMMUNICATION",
+    "Research & Studies",
+  ],
+};
+
+export const mission = {
+  eyebrow: "Our Mission & Vision",
+  title: "Our Mission",
+  body:
+    "To provide comprehensive and innovative consulting solutions that help our clients tackle future challenges, delivering value through deep expertise, continuous innovation, and strategic partnerships, with a commitment to the highest standards of professionalism.",
+  visionTitle: "Our Vision",
+  visionBody:
+    "To be the leading consulting partner in Saudi Arabia, empowering organizations to achieve their objectives.",
+  focusTitle: "Our Services",
+  focusAreas: [
+    "Strategy",
+    "Organizational Excellence",
+    "Corporate Governance",
+    "MARKETING & COMMUNICATION",
+    "Research & Studies",
+  ],
+};
+
+export const services = [
+  {
+    title: "Strategy",
+    items: [
+      "Building & Developing Strategies",
+      "Developing & Designing Programs",
+      "Planning & Evaluating Strategic Decisions",
+      "Implementing Strategies & Strategic Plans",
+    ],
+  },
+  {
+    title: "Organizational Excellence",
+    items: [
+      "Building Business Models",
+      "Organizational Structuring and Design",
+      "Change Management",
+      "Policies and Procedures",
+      "Performance Management",
+    ],
+  },
+  {
+    title: "Corporate Governance",
+    items: [
+      "Designing Governance Frameworks",
+      "Designing Board Structure and Role Definition",
+      "Building Accountability Mechanisms",
+      "Risk Management and Compliance",
+    ],
+  },
+  {
+    title: "MARKETING & COMMUNICATION",
+    items: [
+      "Marketing Strategies",
+      "Communication Strategies",
+      "Evaluating the Customer Journey",
+      "Building a Brand Strategy",
+    ],
+  },
+  {
+    title: "Research & Studies",
+    items: [
+      "Analyzing Complex Data",
+      "Predictive Analytics",
+      "Market Research and Assessment",
+      "Reporting",
+      "Desktop and Field Studies",
+    ],
+  },
+];
+
+export const promise = {
+  eyebrow: "Our Promise",
+  title: "We Only Commit When We Can Deliver Real Impact",
+  cta: { label: "Contact Us", href: "#contact" },
+};
+
+export const team = {
+  eyebrow: "Team",
+  title: "Senior advisors with hands-on operating experience.",
+  description:
+    "Our team blends consulting rigor with leadership experience across financial services, healthcare, and technology.",
+  members: [
+    {
+      name: "Amira Ren",
+      role: "Managing Partner",
+      bio: "Former COO and transformation leader across global service firms.",
+    },
+    {
+      name: "Jules Becker",
+      role: "Strategy Partner",
+      bio: "Market strategy and competitive intelligence specialist.",
+    },
+    {
+      name: "Priya Shah",
+      role: "Operations Partner",
+      bio: "Operational excellence and governance advisor for scale-ups.",
+    },
+  ],
+};
+
+export const faqs = {
+  eyebrow: "FAQs",
+  title:
+    "Please reach us at Info@tahoul.com if you cannot find an answer to your question.",
+  items: [
+    {
+      question: "What makes Tahoul different from other consulting firms?",
+      answer:
+        "At Tahoul, we take a personalized approach to consulting. We work closely with each client to understand their unique challenges and goals, and we develop customized solutions that meet their specific needs.",
+    },
+    {
+      question:
+        "What are some of the industries that Tahoul has experience working with?",
+      answer:
+        "Tahoul has experience working with clients in a range of industries, including healthcare, finance, technology, and retail, among others.",
+    },
+    {
+      question: "What types of consulting services does Tahoul offer?",
+      answer:
+        "Tahoul offers a range of consulting services, including strategic planning, process improvement, organizational development, and change management.",
+    },
+  ],
+};
+
+export const contact = {
+  eyebrow: "Contact Us",
+  title: "Contact Us",
+  details: [
+    {
+      label: "Address",
+      value:
+        "6413 King Abdulaziz Rd, 13335, Al Arid, Riyadh 13335, Saudi Arabia",
+    },
+    { label: "e-MAIL", value: "Info@tahoul.com" },
+    { label: "tel", value: "+966 56 222 0814" },
+  ],
+  form: {
+    nameLabel: "Name",
+    emailLabel: "Email*",
+    filesLabel: "Attach Files",
+    submitLabel: "Send",
+    recaptcha:
+      "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.",
+  },
+};
+
+export const footer = {
+  brand: "Tahoul",
+  privacyLabel: "Privacy Policy",
+  privacyHref: "#",
+  copyright: "Copyright © 2025 Tahoul - All Rights Reserved.",
+};
