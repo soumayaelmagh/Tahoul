@@ -2,10 +2,7 @@ import { mission } from "../content";
 
 export default function Mission() {
   return (
-    <section
-      id="mission"
-      className="section-offset mx-auto max-w-6xl px-6 py-16 md:py-24"
-    >
+    <section id="mission" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="space-y-6 fade-up">
           <p className="text-xs uppercase tracking-[0.4em] text-[var(--color-ink)]/60">

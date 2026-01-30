@@ -2,10 +2,7 @@ import { services } from "../content";
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="section-offset mx-auto max-w-6xl px-6 py-16 md:py-24"
-    >
+    <section id="services" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="space-y-3">
           <h2 className="font-display text-3xl text-[var(--color-deep)] md:text-4xl">

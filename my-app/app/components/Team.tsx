@@ -4,10 +4,7 @@ import { team } from "../content";
 
 export default function Team() {
   return (
-    <section
-      id="team"
-      className="section-offset mx-auto max-w-6xl px-6 py-16 md:py-24"
-    >
+    <section id="team" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.4em] text-[var(--color-ink)]/60">

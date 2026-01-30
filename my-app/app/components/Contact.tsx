@@ -2,10 +2,7 @@ import { contact } from "../content";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="section-offset mx-auto max-w-6xl px-6 py-16 md:py-24"
-    >
+    <section id="contact" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-6">
           <p className="text-xs uppercase tracking-[0.4em] text-[var(--color-ink)]/60">

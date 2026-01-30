@@ -5,10 +5,10 @@ export default function Hero() {
     <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
       <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div className="space-y-8 fade-up">
-          <p className="text-xs uppercase tracking-[0.4em] text-[var(--color-ink)]/60">
+          <p className="text-xs uppercase tracking-[0.4em] text-(--color-ink)/60">
             {hero.eyebrow}
           </p>
-          <h1 className="font-display text-4xl leading-tight text-[var(--color-deep)] md:text-6xl">
+          <h1 className="font-display text-4xl leading-tight text-(--color-deep) md:text-6xl">
             {hero.title}
           </h1>
           <div className="flex flex-wrap gap-4">
@@ -19,7 +19,7 @@ export default function Hero() {
               {hero.primaryCta.label}
             </a>
             <a
-              className="rounded-full border border-[color:var(--color-ink)]/20 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-ink)] transition hover:border-transparent hover:bg-[var(--color-steel)] hover:text-white"
+              className="rounded-full border border-(--color-ink)/20 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-ink)] transition hover:border-transparent hover:bg-[var(--color-steel)] hover:text-white"
               href={hero.secondaryCta.href}
             >
               {hero.secondaryCta.label}
@@ -39,13 +39,13 @@ export default function Hero() {
 
         <div className="fade-up" style={{ animationDelay: "0.15s" }}>
           <div className="glass-panel rounded-3xl p-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink)]/60">
+            <p className="text-xs uppercase tracking-[0.3em] text-(--color-ink)/60">
               {whoWeAre.title}
             </p>
-            <h2 className="font-display mt-4 text-3xl text-[var(--color-deep)]">
+            <h2 className="font-display mt-4 text-3xl text-(--color-deep)">
               {whoWeAre.headline}
             </h2>
-            <p className="mt-4 text-sm text-[color:var(--color-ink)]/80">
+            <p className="mt-4 text-sm text-(--color-ink)/80">
               {whoWeAre.body}
             </p>
           </div>

@@ -4,7 +4,7 @@ import { navCta, navLinks } from "../content";
 
 export default function Navbar() {
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/70 bg-white shadow-md">
+    <nav className="relative z-30 border-b border-white/70 bg-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-5">
         <div className="flex items-center">
           <Image

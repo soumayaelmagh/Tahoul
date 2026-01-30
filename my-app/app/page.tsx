@@ -12,7 +12,7 @@ import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden pt-28 text-(--color-ink) md:pt-32">
+    <div className="relative min-h-screen overflow-x-hidden text-[color:var(--color-ink)]">
       <Background />
 
       <header id="home" className="relative z-10">
