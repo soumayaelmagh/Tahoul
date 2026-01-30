@@ -4,17 +4,20 @@ import { team } from "../content";
 
 export default function Team() {
   return (
-    <section id="team" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <section
+      id="team"
+      className="snap-section mx-auto max-w-6xl px-6 py-16 md:py-24"
+    >
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.4em] text-[var(--color-ink)]/60">
+          <p className="section-eyebrow text-xs uppercase tracking-[0.4em]">
             {team.eyebrow}
           </p>
-          <h2 className="font-display text-3xl text-[var(--color-deep)] md:text-4xl">
+          <h2 className="section-title font-display text-3xl md:text-4xl">
             {team.title}
           </h2>
         </div>
-        <p className="max-w-lg text-sm text-[var(--color-ink)]/70">
+        <p className="section-description max-w-lg whitespace-nowrap text-(--color-ink)/70">
           {team.description}
         </p>
       </div>
@@ -29,9 +32,9 @@ export default function Team() {
           return (
             <div
               key={member.name}
-              className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="card-hover rounded-2xl border border-white/70 bg-white/80 p-6 shadow-sm transition duration-300 hover:-translate-y-1"
             >
-              <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/70 bg-[linear-gradient(130deg,rgba(70,130,180,0.55),rgba(48,83,118,0.85))]">
+              <div className="relative mb-5 aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/70 bg-[linear-gradient(130deg,rgba(70,130,180,0.55),rgba(48,83,118,0.85))]">
                 {member.image ? (
                   <Image
                     src={member.image}
@@ -53,14 +56,14 @@ export default function Team() {
                 )}
               </div>
               <div className="flex items-center justify-between">
-                <p className="font-display text-xl text-[var(--color-deep)]">
+                <p className="font-display text-xl text-(--color-deep)">
                   {member.name}
                 </p>
-                <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-ink)]/60">
+                <span className="text-xs uppercase tracking-[0.2em] text-(--color-ink)/60">
                   {member.role}
                 </span>
               </div>
-              <p className="mt-4 text-sm text-[var(--color-ink)]/75">
+              <p className="mt-4 text-sm text-(--color-ink)/75">
                 {member.bio}
               </p>
             </div>

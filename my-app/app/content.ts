@@ -31,20 +31,13 @@ export const whoWeAre = {
 
 export const mission = {
   eyebrow: "Our Mission & Vision",
+  
   title: "Our Mission",
   body:
     "To provide comprehensive and innovative consulting solutions that help our clients tackle future challenges, delivering value through deep expertise, continuous innovation, and strategic partnerships, with a commitment to the highest standards of professionalism.",
   visionTitle: "Our Vision",
   visionBody:
-    "To be the leading consulting partner in Saudi Arabia, empowering organizations to achieve their objectives.",
-  focusTitle: "Our Services",
-  focusAreas: [
-    "Strategy",
-    "Organizational Excellence",
-    "Corporate Governance",
-    "MARKETING & COMMUNICATION",
-    "Research & Studies",
-  ],
+    "To be the trusted consulting partner in Saudi Arabia for organizations shaping the next economy, recognized for delivering measurable impact, strengthening governance, and building the capabilities that sustain long-term growth.",
 };
 
 export const services = [
@@ -100,6 +93,13 @@ export const services = [
 export const promise = {
   eyebrow: "Our Promise",
   title: "We Only Commit When We Can Deliver Real Impact",
+  body:
+    "We focus on practical outcomes that leadership teams can act on immediately. Every engagement delivers clear priorities, accountable owners, and measurable milestones.",
+  points: [
+    "Decision-ready recommendations, not just analysis",
+    "Confidential, senior-led delivery and support",
+    "Transparent governance and progress tracking",
+  ],
   cta: { label: "Contact Us", href: "#contact" },
 };
 
@@ -183,7 +183,7 @@ export const testimonials = {
 
 export const contact = {
   eyebrow: "Contact Us",
-  title: "Contact Us",
+ 
   details: [
     {
       label: "Address",

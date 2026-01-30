@@ -2,40 +2,65 @@ import { mission } from "../content";
 
 export default function Mission() {
   return (
-    <section id="mission" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <div className="space-y-6 fade-up">
-          <p className="text-xs uppercase tracking-[0.4em] text-[var(--color-ink)]/60">
+    <section
+      id="mission"
+      className="snap-section mx-auto max-w-6xl px-6 py-16 md:py-24"
+    >
+      <div className="space-y-10">
+        <div className="text-left space-y-3">
+          <p className="section-eyebrow text-xs uppercase tracking-[0.4em]">
             {mission.eyebrow}
           </p>
-          <h2 className="font-display text-3xl text-[var(--color-deep)] md:text-4xl">
-            {mission.title}
+          <h2 className="section-title font-display text-4xl md:text-5xl">
+            {mission.heading}
           </h2>
-          <p className="text-lg text-[color:var(--color-ink)]/80">
-            {mission.body}
-          </p>
         </div>
-        <div className="grid gap-6 fade-up" style={{ animationDelay: "0.1s" }}>
-          <div className="glass-panel rounded-3xl p-6">
-            <h3 className="font-display text-2xl text-[var(--color-deep)]">
-              {mission.visionTitle}
-            </h3>
-            <p className="mt-4 text-sm text-[color:var(--color-ink)]/80">
-              {mission.visionBody}
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="glass-panel card-hover rounded-3xl p-8 md:p-10">
+            <div className="flex items-center gap-4">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-accent)]/15 text-[var(--color-accent)]">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <circle cx="12" cy="12" r="8" />
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+                </svg>
+              </span>
+              <h3 className="font-display text-3xl text-[var(--color-deep)] md:text-4xl">
+                {mission.title}
+              </h3>
+            </div>
+            <p className="section-description mt-5 text-[color:var(--color-ink)]/80">
+              {mission.body}
             </p>
           </div>
-          <div className="rounded-3xl border border-[color:var(--color-ink)]/10 bg-white/80 p-6 shadow-sm">
-            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink)]/60">
-              {mission.focusTitle}
+          <div className="glass-panel card-hover rounded-3xl p-8 md:p-10">
+            <div className="flex items-center gap-4">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-steel)]/20 text-[var(--color-deep)]">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6z" />
+                </svg>
+              </span>
+              <h3 className="font-display text-3xl text-[var(--color-deep)] md:text-4xl">
+                {mission.visionTitle}
+              </h3>
+            </div>
+            <p className="section-description mt-5 text-[color:var(--color-ink)]/80">
+              {mission.visionBody}
             </p>
-            <ul className="mt-4 space-y-3 text-sm text-[color:var(--color-ink)]/80">
-              {mission.focusAreas.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[var(--color-steel)]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>

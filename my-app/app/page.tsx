@@ -6,31 +6,36 @@ import Hero from "./components/Hero";
 import Mission from "./components/Mission";
 import Navbar from "./components/Navbar";
 import Promise from "./components/Promise";
+import ScrollSnapContainer from "./components/ScrollSnapContainer";
 import Services from "./components/Services";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
+import WhoWeAre from "./components/WhoWeAre";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden text-[color:var(--color-ink)]">
+    <div className="relative min-h-screen overflow-x-hidden text-(--color-ink)">
       <Background />
 
-      <header id="home" className="relative z-10">
-        <Navbar />
-        <Hero />
-      </header>
+      <ScrollSnapContainer>
+        <header id="home" className="snap-section">
+          <Navbar />
+          <Hero />
+        </header>
 
-      <main className="relative z-10">
-        <Mission />
-        <Services />
-        <Promise />
-        <Team />
-        <Testimonials />
-        <Faqs />
-        <Contact />
-      </main>
+        <main>
+          <WhoWeAre />
+          <Mission />
+          <Services />
+          <Promise />
+          <Team />
+          <Testimonials />
+          <Faqs />
+          <Contact />
+        </main>
 
-      <Footer />
+        <Footer />
+      </ScrollSnapContainer>
     </div>
   );
 }

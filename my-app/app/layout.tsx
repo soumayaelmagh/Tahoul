@@ -1,17 +1,29 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const manrope = Manrope({
+const azerBody = localFont({
   variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  src: [
+    { path: "./fonts/29LTAzer-Thin.ttf", weight: "100", style: "normal" },
+    { path: "./fonts/29LTAzer-ExtraLight.ttf", weight: "200", style: "normal" },
+    { path: "./fonts/29LTAzer-Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/29LTAzer-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/29LTAzer-Medium.ttf", weight: "500", style: "normal" },
+  ],
 });
 
-const cormorant = Cormorant_Garamond({
+const azerDisplay = localFont({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  src: [
+    { path: "./fonts/29LTAzer-Thin.ttf", weight: "100", style: "normal" },
+    { path: "./fonts/29LTAzer-ExtraLight.ttf", weight: "200", style: "normal" },
+    { path: "./fonts/29LTAzer-Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/29LTAzer-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/29LTAzer-Medium.ttf", weight: "500", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${cormorant.variable} antialiased`}>
+      <body className={`${azerBody.variable} ${azerDisplay.variable} antialiased`}>
         {children}
       </body>
     </html>
