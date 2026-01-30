@@ -2,15 +2,12 @@ import { contact } from "../content";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="snap-section mx-auto max-w-6xl px-6 py-16 md:py-24"
-    >
+    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-6">
-          <p className="section-eyebrow text-xs uppercase tracking-[0.4em]">
+          <h1 className="section-eyebrow text-[var(--color-eyebrow)] uppercase tracking-[0.4em]">
             {contact.eyebrow}
-          </p>
+          </h1>
           <h2 className="section-title font-display text-3xl md:text-4xl">
             {contact.title}
           </h2>

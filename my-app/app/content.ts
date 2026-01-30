@@ -1,9 +1,9 @@
 export const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Our Mission", href: "#mission" },
+  { label: "Our Mission", href: "#vision-mission" },
   { label: "Services", href: "#services" },
-  { label: "Team", href: "#team" },
-  { label: "Our Promise", href: "#promise" },
+  { label: "Team", href: "#our-leadership" },
+  { label: "Our Promise", href: "#our-promise" },
 ];
 
 export const navCta = { label: "Contact Us", href: "#contact" };

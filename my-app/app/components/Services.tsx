@@ -2,15 +2,12 @@ import { services } from "../content";
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="snap-section mx-auto max-w-6xl px-6 py-16 md:py-24"
-    >
+    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="space-y-3">
-          <p className="section-eyebrow text-xs uppercase tracking-[0.4em]">
+          <h1 className="section-eyebrow text-[var(--color-eyebrow)] uppercase tracking-[0.4em]">
             Our Services
-          </p>
+          </h1>
         </div>
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">

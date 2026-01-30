@@ -4,15 +4,12 @@ import { team } from "../content";
 
 export default function Team() {
   return (
-    <section
-      id="team"
-      className="snap-section mx-auto max-w-6xl px-6 py-16 md:py-24"
-    >
+    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="space-y-3">
-          <p className="section-eyebrow text-xs uppercase tracking-[0.4em]">
+          <h1 className="section-eyebrow text-[var(--color-eyebrow)] uppercase tracking-[0.4em]">
             {team.eyebrow}
-          </p>
+          </h1>
           <h2 className="section-title font-display text-3xl md:text-4xl">
             {team.title}
           </h2>
@@ -34,7 +31,7 @@ export default function Team() {
               key={member.name}
               className="card-hover rounded-2xl border border-white/70 bg-white/80 p-6 shadow-sm transition duration-300 hover:-translate-y-1"
             >
-              <div className="relative mb-5 aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/70 bg-[linear-gradient(130deg,rgba(70,130,180,0.55),rgba(48,83,118,0.85))]">
+              <div className="relative mb-5 aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/70 bg-[linear-gradient(130deg,rgba(103,181,255,0.55),rgba(47,84,118,0.85))]">
                 {member.image ? (
                   <Image
                     src={member.image}
