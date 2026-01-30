@@ -8,10 +8,11 @@ import Navbar from "./components/Navbar";
 import Promise from "./components/Promise";
 import Services from "./components/Services";
 import Team from "./components/Team";
+import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden text-[color:var(--color-ink)]">
+    <div className="relative min-h-screen overflow-x-hidden pt-28 text-(--color-ink) md:pt-32">
       <Background />
 
       <header id="home" className="relative z-10">
@@ -24,6 +25,7 @@ export default function Home() {
         <Services />
         <Promise />
         <Team />
+        <Testimonials />
         <Faqs />
         <Contact />
       </main>

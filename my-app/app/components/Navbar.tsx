@@ -4,16 +4,16 @@ import { navCta, navLinks } from "../content";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-30 border-b border-white/70 bg-white/75 backdrop-blur">
+    <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/70 bg-white shadow-md">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-5">
         <div className="flex items-center">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="Tahoul logo"
-            width={160}
-            height={56}
+            width={360}
+            height={120}
             priority
-            className="h-12 w-auto md:h-14"
+            className="h-16 w-auto md:h-20"
           />
         </div>
         <div className="flex flex-wrap items-center justify-end gap-4 text-sm font-medium text-[color:var(--color-ink)]/80">

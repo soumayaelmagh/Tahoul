@@ -179,3 +179,18 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --nav-offset: 7rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-offset: 8rem;
+  }
+}
+
+.section-offset {
+  scroll-margin-top: var(--nav-offset);
+  padding-top: var(--nav-offset);
+}

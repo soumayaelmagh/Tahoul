@@ -48,16 +48,6 @@ export default function Hero() {
             <p className="mt-4 text-sm text-[color:var(--color-ink)]/80">
               {whoWeAre.body}
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {whoWeAre.tags.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-[color:var(--color-ink)]/10 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-deep)]"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

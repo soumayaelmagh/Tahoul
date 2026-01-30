@@ -27,13 +27,6 @@ export const whoWeAre = {
   headline: "A leading Saudi consulting firm.",
   body:
     "A leading Saudi consulting firm, aiming to provide innovative and sustainable solutions, adding value to its clients by leveraging relevant knowledge and expertise to help them achieve various strategic objectives and enhance their competitive edge.",
-  tags: [
-    "Strategy",
-    "Organizational Excellence",
-    "Corporate Governance",
-    "MARKETING & COMMUNICATION",
-    "Research & Studies",
-  ],
 };
 
 export const mission = {
@@ -84,7 +77,7 @@ export const services = [
     ],
   },
   {
-    title: "MARKETING & COMMUNICATION",
+    title: "Marketing & Communication",
     items: [
       "Marketing Strategies",
       "Communication Strategies",
@@ -111,7 +104,7 @@ export const promise = {
 };
 
 export const team = {
-  eyebrow: "Team",
+  eyebrow: "Our Leadership",
   title: "Senior advisors with hands-on operating experience.",
   description:
     "Our team blends consulting rigor with leadership experience across financial services, healthcare, and technology.",
@@ -120,16 +113,19 @@ export const team = {
       name: "Amira Ren",
       role: "Managing Partner",
       bio: "Former COO and transformation leader across global service firms.",
+      image: "",
     },
     {
       name: "Jules Becker",
       role: "Strategy Partner",
       bio: "Market strategy and competitive intelligence specialist.",
+      image: "",
     },
     {
       name: "Priya Shah",
       role: "Operations Partner",
       bio: "Operational excellence and governance advisor for scale-ups.",
+      image: "",
     },
   ],
 };
@@ -154,6 +150,33 @@ export const faqs = {
       question: "What types of consulting services does Tahoul offer?",
       answer:
         "Tahoul offers a range of consulting services, including strategic planning, process improvement, organizational development, and change management.",
+    },
+  ],
+};
+
+export const testimonials = {
+  eyebrow: "Testimonials",
+  title: "Client voices, coming soon.",
+  subtitle:
+    "We will be adding verified client feedback here as engagements conclude.",
+  items: [
+    {
+      quote: "Testimonial coming soon.",
+      name: "Confidential Client",
+      title: "Chief Executive Officer",
+      company: "Private Sector Organization",
+    },
+    {
+      quote: "Testimonial coming soon.",
+      name: "Confidential Client",
+      title: "Board Chair",
+      company: "Public Sector Entity",
+    },
+    {
+      quote: "Testimonial coming soon.",
+      name: "Confidential Client",
+      title: "Chief Strategy Officer",
+      company: "Technology Group",
     },
   ],
 };
