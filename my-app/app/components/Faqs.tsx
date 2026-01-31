@@ -23,16 +23,16 @@ export default function Faqs() {
           {faqs.items.map((item) => (
             <details
               key={item.question}
-              className="group card-hover rounded-2xl border border-white/70 bg-white/80 p-5 shadow-sm"
+              className="group card-hover rounded-2xl border border-white/10 bg-[#0f1c27] p-5 text-white shadow-[0_18px_40px_rgba(15,28,39,0.35)]"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-[var(--color-deep)]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-white">
                 <span>{item.question}</span>
-                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--color-ink)]/20 text-base text-[var(--color-ink)]/70">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-base text-white/80">
                   <span className="group-open:hidden">+</span>
                   <span className="hidden group-open:inline">-</span>
                 </span>
               </summary>
-              <p className="mt-3 text-sm text-[color:var(--color-ink)]/65">
+              <p className="mt-3 text-sm text-white/75">
                 {item.answer}
               </p>
             </details>

@@ -48,8 +48,8 @@ html {
 .section-eyebrow {
   color: var(--color-eyebrow);
   font-family: var(--font-body), "Manrope", sans-serif;
-  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
-  font-weight: 600;
+  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  font-weight: 800;
   letter-spacing: 0.45em;
   line-height: 1.2;
   text-transform: uppercase;
@@ -65,6 +65,140 @@ html {
   font-size: 1rem;
   line-height: 1.7;
   max-width: 60ch;
+}
+
+.logo-marquee {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 28, 39, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.75rem 0;
+}
+
+.marquee-wide {
+  width: min(98vw, 1400px);
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: max-content;
+  animation: logo-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  height: 56px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 28, 39, 0.12);
+  background: #ffffff;
+}
+
+.logo-item .logo-image {
+  height: 34px;
+  width: auto;
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.logo-item:hover .logo-image {
+  opacity: 1;
+}
+
+.logo-item span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(15, 28, 39, 0.55);
+  transition: color 200ms ease, opacity 200ms ease;
+  opacity: 0.7;
+}
+
+.logo-item:hover span {
+  color: rgba(15, 28, 39, 0.95);
+  opacity: 1;
+}
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+
+.testimonial-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 500ms ease;
+  will-change: transform;
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  padding-right: 0.5rem;
+}
+
+.testimonial-dots {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.testimonial-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 28, 39, 0.35);
+  background: transparent;
+  transition: transform 200ms ease, background 200ms ease, border-color 200ms ease;
+}
+
+.testimonial-dots button.active {
+  background: rgba(103, 181, 255, 0.85);
+  border-color: rgba(103, 181, 255, 0.85);
+  transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track {
+    transition: none;
+  }
+}
+
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-track {
+    animation-duration: 30s;
+    gap: 1.75rem;
+  }
+
+  .logo-item {
+    min-width: 130px;
+    height: 48px;
+    padding: 0 1rem;
+  }
+
+  .logo-item .logo-image {
+    height: 28px;
+  }
 }
 
 .fullpage-container {
@@ -586,6 +720,11 @@ html {
   .wave-line,
   .bubble-pop {
     animation: none;
+  }
+
+  .logo-track {
+    animation: none;
+    transform: translateX(0);
   }
 }
 

@@ -60,7 +60,7 @@ export default function Mission() {
           <div className="pointer-events-none absolute -right-12 -top-10 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(103,181,255,0.18),transparent_70%)] blur-3xl" />
           <div className="pointer-events-none absolute -left-10 bottom-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(47,84,118,0.28),transparent_70%)] blur-3xl" />
 
-          <p className="text-[0.72rem] font-semibold uppercase tracking-[0.45em] text-white/70">
+          <p className="section-eyebrow !text-white">
             {mission.eyebrow}
           </p>
 
