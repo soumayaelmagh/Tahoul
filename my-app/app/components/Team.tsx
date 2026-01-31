@@ -22,7 +22,7 @@ export default function Team() {
             </h2>
           ) : null}
           <p
-            className="section-description fade-up max-w-lg text-left"
+            className="section-description fade-up max-w-lg text-left whitespace-nowrap"
             style={{ animationDelay: "0.2s" }}
           >
             {team.description}
