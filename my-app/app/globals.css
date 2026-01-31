@@ -596,6 +596,7 @@ html {
 
 :root {
   --nav-offset: 7rem;
+  --footer-offset: 4.5rem;
 }
 
 .section-offset {
@@ -605,4 +606,9 @@ html {
 
 .page-offset {
   padding-top: var(--nav-offset);
+}
+
+.fullpage-section {
+  box-sizing: border-box;
+  padding-bottom: var(--footer-offset);
 }

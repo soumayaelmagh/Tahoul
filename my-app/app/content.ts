@@ -104,7 +104,7 @@ export const promise = {
 
 export const team = {
   eyebrow: "Our Leadership",
-  title: "Senior advisors with hands-on operating experience.",
+  title: "",
   description:
     "Our team blends consulting rigor with leadership experience across financial services, healthcare, and technology.",
   members: [
