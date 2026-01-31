@@ -11,12 +11,6 @@ export default function Contact() {
           >
             {contact.eyebrow}
           </p>
-          <h2
-            className="section-title fade-up font-display text-3xl md:text-4xl"
-            style={{ animationDelay: "0.1s" }}
-          >
-            {contact.title}
-          </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {contact.details.map((detail) => (
               <div

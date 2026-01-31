@@ -13,19 +13,21 @@ export default function Team() {
           >
             {team.eyebrow}
           </p>
-          <h2
-            className="section-title fade-up font-display text-3xl md:text-4xl"
-            style={{ animationDelay: "0.1s" }}
+          {team.title ? (
+            <h2
+              className="section-title fade-up font-display text-3xl md:text-4xl"
+              style={{ animationDelay: "0.1s" }}
+            >
+              {team.title}
+            </h2>
+          ) : null}
+          <p
+            className="section-description fade-up max-w-lg text-left"
+            style={{ animationDelay: "0.2s" }}
           >
-            {team.title}
-          </h2>
+            {team.description}
+          </p>
         </div>
-        <p
-          className="section-description fade-up max-w-lg whitespace-nowrap"
-          style={{ animationDelay: "0.2s" }}
-        >
-          {team.description}
-        </p>
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {team.members.map((member) => {

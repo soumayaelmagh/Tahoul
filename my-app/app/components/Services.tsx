@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
+
 import { services } from "../content";
 
 export default function Services() {
-  const serviceIcons: Record<string, JSX.Element> = {
+  const serviceIcons: Record<string, ReactNode> = {
     Strategy: (
       <svg
         aria-hidden="true"
