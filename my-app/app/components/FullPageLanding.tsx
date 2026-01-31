@@ -29,7 +29,7 @@ const sectionsConfig = [
   {
     id: "home",
     label: "Home",
-    navBackground: "url('/hero-v3.png')",
+    navBackground: "url('/hero-v3.jpg')",
     navTone: "light",
   },
   { id: "who-we-are", label: "Who We Are", navBackground: baseSectionBackground },
@@ -452,12 +452,13 @@ export default function FullPageLanding() {
           id="home"
           className="fullpage-section relative overflow-hidden"
           data-index={0}
+          data-active={activeIndex === 0 ? "true" : "false"}
         >
           <Image
-            src="/hero-v3.png"
+            src="/hero-v3.jpg"
             alt="Tahoul consulting leadership"
             fill
-            className="object-cover opacity-90 mix-blend-multiply [mask-image:linear-gradient(90deg,transparent_0%,black_12%,black_88%,transparent_100%)]"
+            className="object-cover"
             sizes="100vw"
             priority
           />
@@ -470,7 +471,12 @@ export default function FullPageLanding() {
           <Hero />
         </header>
 
-        <section id="who-we-are" className="fullpage-section" data-index={1}>
+        <section
+          id="who-we-are"
+          className="fullpage-section"
+          data-index={1}
+          data-active={activeIndex === 1 ? "true" : "false"}
+        >
           <WhoWeAre />
         </section>
 
@@ -478,11 +484,17 @@ export default function FullPageLanding() {
           id="vision-mission"
           className="fullpage-section"
           data-index={2}
+          data-active={activeIndex === 2 ? "true" : "false"}
         >
           <Mission />
         </section>
 
-        <section id="services" className="fullpage-section" data-index={3}>
+        <section
+          id="services"
+          className="fullpage-section"
+          data-index={3}
+          data-active={activeIndex === 3 ? "true" : "false"}
+        >
           <Services />
         </section>
 
@@ -490,23 +502,44 @@ export default function FullPageLanding() {
           id="our-leadership"
           className="fullpage-section"
           data-index={4}
+          data-active={activeIndex === 4 ? "true" : "false"}
         >
           <Team />
         </section>
 
-        <section id="our-promise" className="fullpage-section" data-index={5}>
+        <section
+          id="our-promise"
+          className="fullpage-section"
+          data-index={5}
+          data-active={activeIndex === 5 ? "true" : "false"}
+        >
           <Promise />
         </section>
 
-        <section id="testimonials" className="fullpage-section" data-index={6}>
+        <section
+          id="testimonials"
+          className="fullpage-section"
+          data-index={6}
+          data-active={activeIndex === 6 ? "true" : "false"}
+        >
           <Testimonials />
         </section>
 
-        <section id="faqs" className="fullpage-section" data-index={7}>
+        <section
+          id="faqs"
+          className="fullpage-section"
+          data-index={7}
+          data-active={activeIndex === 7 ? "true" : "false"}
+        >
           <Faqs />
         </section>
 
-        <section id="contact" className="fullpage-section" data-index={8}>
+        <section
+          id="contact"
+          className="fullpage-section"
+          data-index={8}
+          data-active={activeIndex === 8 ? "true" : "false"}
+        >
           <Contact />
           <Footer />
         </section>

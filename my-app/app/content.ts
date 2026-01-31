@@ -10,7 +10,7 @@ export const navCta = { label: "Contact Us", href: "#contact" };
 
 export const hero = {
   eyebrow: "Transform your business with tailored consulting solutions",
-  title: "solutions designed for you, not for everyone before you",
+  title: "Solutions designed for you, not for everyone before you",
   primaryCta: { label: "Contact Us", href: "#contact" },
   secondaryCta: { label: "Our Services", href: "#services" },
   tags: [
@@ -26,11 +26,10 @@ export const whoWeAre = {
   title: "Who We Are",
   headline: "A leading Saudi consulting firm.",
   body:
-    "A leading Saudi consulting firm, aiming to provide innovative and sustainable solutions, adding value to its clients by leveraging relevant knowledge and expertise to help them achieve various strategic objectives and enhance their competitive edge.",
-};
+    "We are a Saudi consulting firm helping organizations design and execute innovative, sustainable strategies. By combining deep local insight with global best practices, we enable our clients to achieve measurable results, strengthen competitiveness, and deliver long-term value."};
 
 export const mission = {
-  eyebrow: "Our Mission & Vision",
+  eyebrow: "Our Vision & Mission",
   
   title: "Our Mission",
   body:

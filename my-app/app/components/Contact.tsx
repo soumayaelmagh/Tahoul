@@ -4,11 +4,17 @@ export default function Contact() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="space-y-6">
-          <h1 className="section-eyebrow text-[var(--color-eyebrow)] uppercase tracking-[0.4em]">
+        <div className="space-y-7">
+          <p
+            className="section-eyebrow fade-up uppercase tracking-[0.45em]"
+            style={{ animationDelay: "0s" }}
+          >
             {contact.eyebrow}
-          </h1>
-          <h2 className="section-title font-display text-3xl md:text-4xl">
+          </p>
+          <h2
+            className="section-title fade-up font-display text-3xl md:text-4xl"
+            style={{ animationDelay: "0.1s" }}
+          >
             {contact.title}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -27,7 +33,7 @@ export default function Contact() {
             ))}
           </div>
         </div>
-        <form className="glass-panel card-hover rounded-3xl p-8">
+        <form className="glass-panel card-hover rounded-2xl p-8">
           <div className="grid gap-5">
             <div>
               <label
@@ -74,7 +80,7 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:brightness-110"
+              className="rounded-full border border-[rgba(103,181,255,0.5)] bg-[rgba(103,181,255,0.28)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-ink)] transition hover:-translate-y-0.5 hover:bg-[rgba(103,181,255,0.4)]"
             >
               {contact.form.submitLabel}
             </button>

@@ -16,21 +16,18 @@ export default function Navbar({
 }: NavbarProps) {
   const linkClass =
     tone === "light"
-      ? "text-white/85 hover:text-white"
-      : "text-[color:var(--color-ink)]/80 hover:text-[var(--color-accent)]";
+      ? "text-white/85"
+      : "text-[color:var(--color-ink)]/80";
   const ctaClass =
     tone === "light"
-      ? "bg-[var(--color-accent)] text-[var(--color-ink)]"
-      : "bg-[var(--color-accent)] text-[var(--color-ink)]";
+      ? "bg-[var(--color-accent)] text-[var(--color-ink)] hover:bg-[#0f1c27] hover:text-white"
+      : "bg-[var(--color-accent)] text-[var(--color-ink)] hover:bg-[#0f1c27] hover:text-white";
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-50 bg-transparent ${
-        bordered ? "border-b border-white/30" : "border-b border-transparent"
-      }`}
-      style={backgroundStyle}
+      className="fixed left-0 right-0 top-0 z-50 bg-transparent border-b border-transparent"
     >
-      <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-6 px-6 py-5">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-8 px-8 py-5">
         <div className="flex items-center">
           <Image
             src="/logo-tr.png"
@@ -38,14 +35,18 @@ export default function Navbar({
             width={360}
             height={120}
             priority
-            className="h-12 w-auto md:h-14"
+            className="block h-12 w-auto md:h-14"
           />
         </div>
         <div
-          className={`flex flex-wrap items-center justify-end gap-4 text-lg font-medium ${linkClass}`}
+          className={`flex items-center justify-end gap-4 text-lg font-medium leading-none ${linkClass}`}
         >
           {navLinks.map((link) => (
-            <a key={link.href} className="transition" href={link.href}>
+            <a
+              key={link.href}
+              className="flex items-center rounded-full px-3 py-2 transition hover:bg-[#0f1c27] hover:text-white"
+              href={link.href}
+            >
               {link.label}
             </a>
           ))}

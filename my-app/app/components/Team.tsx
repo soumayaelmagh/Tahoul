@@ -6,15 +6,24 @@ export default function Team() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="flex flex-wrap items-end justify-between gap-6">
-        <div className="space-y-3">
-          <h1 className="section-eyebrow text-[var(--color-eyebrow)] uppercase tracking-[0.4em]">
+        <div className="space-y-5">
+          <p
+            className="section-eyebrow fade-up uppercase tracking-[0.45em]"
+            style={{ animationDelay: "0s" }}
+          >
             {team.eyebrow}
-          </h1>
-          <h2 className="section-title font-display text-3xl md:text-4xl">
+          </p>
+          <h2
+            className="section-title fade-up font-display text-3xl md:text-4xl"
+            style={{ animationDelay: "0.1s" }}
+          >
             {team.title}
           </h2>
         </div>
-        <p className="section-description max-w-lg whitespace-nowrap text-(--color-ink)/70">
+        <p
+          className="section-description fade-up max-w-lg whitespace-nowrap"
+          style={{ animationDelay: "0.2s" }}
+        >
           {team.description}
         </p>
       </div>
@@ -53,14 +62,14 @@ export default function Team() {
                 )}
               </div>
               <div className="flex items-center justify-between">
-                <p className="font-display text-xl text-(--color-deep)">
+                <p className="font-display text-xl text-[var(--color-deep)]">
                   {member.name}
                 </p>
-                <span className="text-xs uppercase tracking-[0.2em] text-(--color-ink)/60">
+                <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-ink)]/55">
                   {member.role}
                 </span>
               </div>
-              <p className="mt-4 text-sm text-(--color-ink)/75">
+              <p className="mt-4 text-sm text-[var(--color-ink)]/65">
                 {member.bio}
               </p>
             </div>

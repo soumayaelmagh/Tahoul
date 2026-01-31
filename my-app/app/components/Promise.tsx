@@ -3,18 +3,29 @@ import { promise } from "../content";
 export default function Promise() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="relative overflow-hidden rounded-4xl bg-(--color-deep) px-8 py-12 text-white md:px-12">
+      <div className="relative overflow-hidden rounded-2xl bg-[var(--color-deep)] px-8 py-12 text-white md:px-12">
         <div className="pointer-events-none absolute right-10 top-6 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.35),transparent_70%)] blur-xl" />
         <div className="pointer-events-none absolute -left-10 bottom-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(103,181,255,0.6),transparent_70%)] blur-2xl" />
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div className="space-y-6">
-            <h1 className="section-eyebrow bg-eyebrow uppercase tracking-[0.4em]">
+            <p
+              className="section-eyebrow fade-up uppercase tracking-[0.45em]"
+              style={{ animationDelay: "0s", color: "rgba(255,255,255,0.8)" }}
+            >
               {promise.eyebrow}
-            </h1>
-            <h2 className="section-title font-display text-3xl md:text-4xl">
+            </p>
+            <h2
+              className="section-title fade-up font-display text-3xl md:text-4xl"
+              style={{ animationDelay: "0.1s" }}
+            >
               {promise.title}
             </h2>
-          <p className="section-description text-white/85">{promise.body}</p>
+          <p
+            className="section-description fade-up text-white/75"
+            style={{ animationDelay: "0.2s" }}
+          >
+            {promise.body}
+          </p>
             <ul className="grid gap-3 text-sm text-white/80 md:grid-cols-2">
               {promise.points.map((point) => (
                 <li key={point} className="flex items-start gap-3">
@@ -25,7 +36,7 @@ export default function Promise() {
             </ul>
             <div className="flex flex-wrap gap-4">
               <a
-                className="sheen rounded-full bg-(--color-accent) px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:brightness-110"
+                className="sheen rounded-full border border-[rgba(103,181,255,0.5)] bg-[rgba(103,181,255,0.28)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:-translate-y-0.5 hover:bg-[rgba(103,181,255,0.45)]"
                 href={promise.cta.href}
               >
                 {promise.cta.label}

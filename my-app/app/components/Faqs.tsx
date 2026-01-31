@@ -4,11 +4,17 @@ export default function Faqs() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-        <div className="space-y-4">
-          <h1 className="section-eyebrow text-[var(--color-eyebrow)] uppercase tracking-[0.4em]">
+        <div className="space-y-5">
+          <p
+            className="section-eyebrow fade-up uppercase tracking-[0.45em]"
+            style={{ animationDelay: "0s" }}
+          >
             {faqs.eyebrow}
-          </h1>
-          <h2 className="section-title font-display text-3xl md:text-4xl">
+          </p>
+          <h2
+            className="section-title fade-up font-display text-3xl md:text-4xl"
+            style={{ animationDelay: "0.1s" }}
+          >
             {faqs.title}
           </h2>
           <div className="pulse-line h-1 w-40 rounded-full bg-[rgba(47,84,118,0.12)]" />
@@ -26,7 +32,7 @@ export default function Faqs() {
                   <span className="hidden group-open:inline">-</span>
                 </span>
               </summary>
-              <p className="mt-3 text-sm text-[color:var(--color-ink)]/75">
+              <p className="mt-3 text-sm text-[color:var(--color-ink)]/65">
                 {item.answer}
               </p>
             </details>
