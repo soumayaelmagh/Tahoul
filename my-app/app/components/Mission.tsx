@@ -1,62 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
 import { mission } from "../content";
 
 export default function Mission() {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduceMotion(motionQuery.matches);
-
-    if (motionQuery.matches) {
-      setIsVisible(true);
-      return;
-    }
-
-    const target = sectionRef.current;
-    if (!target || !("IntersectionObserver" in window)) {
-      setIsVisible(true);
-      return;
-    }
-
-    const root = document.querySelector(".fullpage-container");
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        root: root instanceof Element ? root : null,
-        threshold: 0.35,
-      }
-    );
-
-    observer.observe(target);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative mx-auto max-w-6xl px-6 py-16 md:py-24"
-    >
+    <section className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="mt-10">
-        <div
-          className={`relative overflow-hidden rounded-2xl bg-[#0f1c27] px-8 py-12 text-white shadow-[0_24px_60px_rgba(15,28,39,0.35)] md:px-12 md:py-14 slide-in ${
-            isVisible ? "is-visible" : ""
-          }`}
-        >
+        <div className="relative overflow-hidden rounded-2xl bg-[#0f1c27] px-8 py-12 text-white shadow-[0_24px_60px_rgba(15,28,39,0.35)] md:px-12 md:py-14 slide-in">
           <div className="pointer-events-none absolute -right-12 -top-10 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(103,181,255,0.18),transparent_70%)] blur-3xl" />
           <div className="pointer-events-none absolute -left-10 bottom-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(47,84,118,0.28),transparent_70%)] blur-3xl" />
 

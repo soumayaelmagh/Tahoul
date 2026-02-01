@@ -7,19 +7,19 @@ export default function Hero() {
         <div className="space-y-9">
           <p
             className="section-eyebrow fade-up uppercase tracking-[0.4em]"
-            style={{ animationDelay: "0s", color: "#ffffff" }}
+            style={{ animationDelay: "0.1s", color: "#ffffff" }}
           >
             {hero.eyebrow}
           </p>
           <h1
             className="fade-up font-display text-[2.6rem] leading-[1.1] text-white md:text-[4.1rem]"
-            style={{ animationDelay: "0.1s" }}
+            style={{ animationDelay: "0.2s" }}
           >
             {hero.title}
           </h1>
           <div
             className="fade-up flex flex-wrap gap-4"
-            style={{ animationDelay: "0.2s" }}
+            style={{ animationDelay: "0.3s" }}
           >
             <a
               className="sheen rounded-full border border-[rgba(103,181,255,0.5)] bg-[rgba(103,181,255,0.3)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:-translate-y-0.5 hover:bg-[rgba(103,181,255,0.45)]"
@@ -33,19 +33,6 @@ export default function Hero() {
             >
               {hero.secondaryCta.label}
             </a>
-          </div>
-          <div
-            className="fade-up flex flex-wrap gap-3"
-            style={{ animationDelay: "0.32s" }}
-          >
-            {hero.tags.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/85"
-              >
-                {item}
-              </span>
-            ))}
           </div>
         </div>
       </div>

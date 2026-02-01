@@ -1,57 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
 
 import { whoWeAre } from "../content";
 
 export default function WhoWeAre() {
-  const cardRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduceMotion.matches) {
-      setIsVisible(true);
-      return;
-    }
-
-    const target = cardRef.current;
-    if (!target || !("IntersectionObserver" in window)) {
-      setIsVisible(true);
-      return;
-    }
-
-    const root = document.querySelector(".fullpage-container");
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        root: root instanceof Element ? root : null,
-        threshold: 0.45,
-      }
-    );
-
-    observer.observe(target);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 pt-28 md:py-24 md:pt-32">
-      <div
-        ref={cardRef}
-        className={`glass-panel card-hover slide-in rounded-2xl p-8 md:p-12 ${
-          isVisible ? "is-visible" : ""
-        }`}
-      >
+      <div className="glass-panel card-hover slide-in rounded-2xl p-8 md:p-12">
         <p
           className="section-eyebrow fade-up uppercase tracking-[0.45em]"
           style={{ animationDelay: "0s" }}

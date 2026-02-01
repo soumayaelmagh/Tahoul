@@ -3,7 +3,7 @@ import { promise } from "../content";
 export default function Promise() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="relative overflow-hidden rounded-2xl bg-[#0f1c27] px-8 py-12 text-white md:px-12">
+      <div className="relative overflow-hidden rounded-2xl bg-[#0f1c27] px-8 py-12 text-white md:px-12 slide-in">
         <div className="pointer-events-none absolute right-10 top-6 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.35),transparent_70%)] blur-xl" />
         <div className="pointer-events-none absolute -left-10 bottom-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(103,181,255,0.6),transparent_70%)] blur-2xl" />
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">

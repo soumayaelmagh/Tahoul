@@ -1,6 +1,9 @@
 import { contact } from "../content";
 
 export default function Contact() {
+  const mapSrc =
+    "https://www.google.com/maps?q=6413%20King%20Abdulaziz%20Rd%2C%20Al%20Arid%2C%20Riyadh%2013335%2C%20Saudi%20Arabia&output=embed";
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
@@ -13,18 +16,106 @@ export default function Contact() {
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             {contact.details.map((detail) => (
-              <div
-                key={detail.label}
-                className="card-hover rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm"
-              >
-                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink)]/60">
-                  {detail.label}
-                </p>
-                <p className="mt-2 text-sm text-[var(--color-deep)]">
-                  {detail.value}
-                </p>
-              </div>
+              (() => {
+                const label = detail.label.toLowerCase();
+                let icon = (
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3 11h18" />
+                    <path d="M5 11v6h14v-6" />
+                    <path d="M7 7h10l2 4H5l2-4z" />
+                  </svg>
+                );
+                if (label.includes("mail")) {
+                  icon = (
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M4 6h16v12H4z" />
+                      <path d="M4 7l8 6 8-6" />
+                    </svg>
+                  );
+                } else if (label.includes("address")) {
+                  icon = (
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" />
+                      <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                  );
+                } else if (label.includes("tel")) {
+                  icon = (
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M4 5h4l2 5-2.5 1.5a12 12 0 0 0 5 5L14 14l5 2v4c-7 0-13-6-15-15z" />
+                    </svg>
+                  );
+                }
+
+                return (
+                  <div
+                    key={detail.label}
+                    className="card-hover rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-sand)] text-[var(--color-deep)]">
+                        {icon}
+                      </span>
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink)]/60">
+                          {detail.label}
+                        </p>
+                        <p className="mt-1 text-sm text-[var(--color-deep)]">
+                          {detail.value}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()
             ))}
+          </div>
+          <div className="rounded-2xl border-2 border-[#0f1c27] bg-white/70 p-3 shadow-sm">
+            <div className="overflow-hidden rounded-xl border border-[#0f1c27]">
+              <iframe
+                title="Tahoul location map"
+                src={mapSrc}
+                className="h-56 w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
         <form className="glass-panel card-hover rounded-2xl p-8">
