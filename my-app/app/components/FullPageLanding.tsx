@@ -64,6 +64,7 @@ const sectionsConfig = [
     navBackground: baseSectionBackground,
     navTone: "light",
   },
+  { id: "footer", label: "Footer", navBackground: baseSectionBackground },
 ];
 
 export default function FullPageLanding() {
@@ -408,7 +409,7 @@ export default function FullPageLanding() {
   const totalLabel = String(sectionsConfig.length).padStart(2, "0");
 
   return (
-    <div className="relative min-h-screen text-[color:var(--color-ink)]">
+    <div className="relative min-h-screen text-(--color-ink)">
       <Background />
 
       <nav className="pp-nav" aria-label="Section navigation">
@@ -549,6 +550,14 @@ export default function FullPageLanding() {
           data-active={activeIndex === 8 ? "true" : "false"}
         >
           <Contact />
+        </section>
+
+        <section
+          id="footer"
+          className="fullpage-section"
+          data-index={9}
+          data-active={activeIndex === 9 ? "true" : "false"}
+        >
           <Footer />
         </section>
       </div>

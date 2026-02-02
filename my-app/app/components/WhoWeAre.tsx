@@ -18,7 +18,7 @@ export default function WhoWeAre() {
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <div className="space-y-6">
               <h2
-                className="fade-up font-display text-[2.6rem] leading-[1.12] text-[var(--color-deep)] md:text-[3.2rem]"
+                className="fade-up font-display text-[2.6rem] leading-[1.12] text-(--color-deep) md:text-[3.2rem]"
                 style={{ animationDelay: "0.1s" }}
               >
                 {whoWeAre.headline}

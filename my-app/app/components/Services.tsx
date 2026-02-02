@@ -109,12 +109,12 @@ export default function Services() {
           </p>
         </div>
       </div>
-      <div className="mt-10 flex flex-col gap-4 md:min-h-[420px] md:flex-row md:gap-6">
+      <div className="mt-10 flex flex-col gap-4 md:min-h-105 md:flex-row md:gap-6">
         {services.map((service, index) => (
           <article
             key={service.title}
             tabIndex={0}
-            className="fade-up group relative flex-1 overflow-hidden rounded-3xl border border-[#0f1c27]/50 shadow-[0_18px_40px_rgba(15,28,39,0.2)] transition-[flex,transform,box-shadow] duration-500 ease-out hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sky)]/60 md:hover:flex-[2.6]"
+            className="fade-up group relative flex-1 overflow-hidden rounded-3xl border border-[#0f1c27]/50 shadow-[0_18px_40px_rgba(15,28,39,0.2)] transition-[flex,transform,box-shadow] duration-500 ease-out hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-sky)/60 md:hover:flex-[2.6]"
             style={{ animationDelay: `${0.05 + index * 0.05}s` }}
           >
             <div
