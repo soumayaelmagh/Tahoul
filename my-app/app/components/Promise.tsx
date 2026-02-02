@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { promise } from "../content";
 
 export default function Promise() {
@@ -44,28 +46,14 @@ export default function Promise() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <div className="relative flex h-48 w-48 items-center justify-center rounded-[28px] border border-white/15 bg-white/10 shadow-2xl md:h-56 md:w-56">
-              <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.35),transparent_70%)] blur-xl" />
-              <svg
-                aria-hidden="true"
-                className="h-24 w-24 text-white md:h-28 md:w-28"
-                viewBox="0 0 120 120"
-                fill="none"
-              >
-                <path
-                  d="M60 10C44 22 30 26 18 28v28c0 28 19 46 42 56 23-10 42-28 42-56V28c-12-2-26-6-42-18z"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  fill="none"
-                />
-                <path
-                  d="M40 62l12 12 28-28"
-                  stroke="currentColor"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <div className="relative h-72 w-72 overflow-hidden rounded-[34px] md:h-80 md:w-80 lg:h-[28rem] lg:w-[28rem]">
+              <div className="pointer-events-none absolute inset-0 rounded-[34px] ring-1 ring-white/20" />
+              <Image
+                src="/promise.png"
+                alt="Promise"
+                fill
+                className="relative z-10 object-cover"
+              />
             </div>
           </div>
         </div>
