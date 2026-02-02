@@ -97,7 +97,8 @@ export default function Services() {
   };
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <section className="flex min-h-screen items-center bg-white py-16 pt-28 md:py-24 md:pt-32">
+      <div className="mx-auto w-full max-w-6xl px-6">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="space-y-5">
           <p
@@ -124,21 +125,21 @@ export default function Services() {
                   "linear-gradient(135deg, rgba(47,84,118,0.85), rgba(15,28,39,0.9))",
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0f1c27]/35 via-[#0f1c27]/60 to-[#0f1c27]/85" />
+            <div className="absolute inset-0 bg-linear-to-b from-[#0f1c27]/35 via-[#0f1c27]/60 to-[#0f1c27]/85" />
             <div className="relative z-10 flex h-full flex-col p-6 text-white md:p-8">
               <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center transition-all duration-400 ease-out group-hover:flex-none group-hover:justify-start group-hover:pt-2 group-focus-within:flex-none group-focus-within:justify-start group-focus-within:pt-2">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#67b5ff]/20 text-[#67b5ff]">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
                   {serviceIcons[service.title]}
                 </span>
-                <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.65rem)] font-semibold leading-tight text-[#67b5ff]">
+                <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.65rem)] font-semibold leading-tight text-white">
                   {service.title}
                 </h3>
               </div>
               <div className="mt-4 overflow-hidden transition-all duration-400 ease-out max-h-0 opacity-0 translate-y-3 group-hover:max-h-72 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:max-h-72 group-focus-within:opacity-100 group-focus-within:translate-y-0 max-md:max-h-none max-md:opacity-100 max-md:translate-y-0">
-                <ul className="space-y-2 text-base text-white/85">
+                <ul className="space-y-2 text-center text-base font-semibold text-white">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[var(--color-sky)]" />
+                    <li key={item} className="flex items-center justify-start gap-3">
+                      <span className="h-2.5 w-2.5 rounded-full bg-white" />
                       {item}
                     </li>
                   ))}
@@ -147,6 +148,7 @@ export default function Services() {
             </div>
           </article>
         ))}
+      </div>
       </div>
     </section>
   );

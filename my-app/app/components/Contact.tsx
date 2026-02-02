@@ -5,11 +5,12 @@ export default function Contact() {
     "https://www.google.com/maps?q=6413%20King%20Abdulaziz%20Rd%2C%20Al%20Arid%2C%20Riyadh%2013335%2C%20Saudi%20Arabia&output=embed";
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+    <section className="bg-[#0f1c27] py-16 pt-28 text-white md:py-24 md:pt-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-7">
           <p
-            className="section-eyebrow fade-up uppercase tracking-[0.45em]"
+            className="section-eyebrow fade-up uppercase tracking-[0.45em] !text-white"
             style={{ animationDelay: "0s" }}
           >
             {contact.eyebrow}
@@ -86,17 +87,17 @@ export default function Contact() {
                 return (
                   <div
                     key={detail.label}
-                    className="card-hover rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm"
+                    className="card-hover rounded-2xl border border-white/15 bg-white/10 p-4 text-white shadow-[0_18px_40px_rgba(15,28,39,0.45)]"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-sand)] text-[var(--color-deep)]">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/15 text-white">
                         {icon}
                       </span>
                       <div>
-                        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink)]/60">
+                        <p className="text-xs uppercase tracking-[0.3em] text-white/70">
                           {detail.label}
                         </p>
-                        <p className="mt-1 text-sm text-[var(--color-deep)]">
+                        <p className="mt-1 text-base font-semibold text-white">
                           {detail.value}
                         </p>
                       </div>
@@ -106,8 +107,8 @@ export default function Contact() {
               })()
             ))}
           </div>
-          <div className="rounded-2xl border-2 border-[#0f1c27] bg-white/70 p-3 shadow-sm">
-            <div className="overflow-hidden rounded-xl border border-[#0f1c27]">
+          <div className="rounded-2xl border border-white/20 bg-white/5 p-3 shadow-[0_18px_40px_rgba(15,28,39,0.45)]">
+            <div className="overflow-hidden rounded-xl border border-white/20">
               <iframe
                 title="Tahoul location map"
                 src={mapSrc}
@@ -118,11 +119,11 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <form className="glass-panel card-hover rounded-2xl p-8">
+        <form className="rounded-2xl border border-white/15 bg-white/10 p-8 text-white shadow-[0_18px_40px_rgba(15,28,39,0.45)]">
           <div className="grid gap-5">
             <div>
               <label
-                className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink)]/60"
+                className="text-xs uppercase tracking-[0.3em] text-white/70"
                 htmlFor="name"
               >
                 {contact.form.nameLabel}
@@ -131,12 +132,12 @@ export default function Contact() {
                 id="name"
                 name="name"
                 type="text"
-                className="mt-2 w-full rounded-2xl border border-[color:var(--color-ink)]/15 bg-white/80 px-4 py-3 text-sm text-[var(--color-ink)] outline-none transition focus:border-[var(--color-steel)] focus:ring-2 focus:ring-[var(--color-steel)]/20"
+                className="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base font-semibold text-white outline-none transition focus:border-white/50 focus:ring-2 focus:ring-white/20"
               />
             </div>
             <div>
               <label
-                className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink)]/60"
+                className="text-xs uppercase tracking-[0.3em] text-white/70"
                 htmlFor="email"
               >
                 {contact.form.emailLabel}
@@ -145,12 +146,12 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
-                className="mt-2 w-full rounded-2xl border border-[color:var(--color-ink)]/15 bg-white/80 px-4 py-3 text-sm text-[var(--color-ink)] outline-none transition focus:border-[var(--color-steel)] focus:ring-2 focus:ring-[var(--color-steel)]/20"
+                className="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base font-semibold text-white outline-none transition focus:border-white/50 focus:ring-2 focus:ring-white/20"
               />
             </div>
             <div>
               <label
-                className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink)]/60"
+                className="text-xs uppercase tracking-[0.3em] text-white/70"
                 htmlFor="files"
               >
                 {contact.form.filesLabel}
@@ -160,20 +161,21 @@ export default function Contact() {
                 name="files"
                 type="file"
                 multiple
-                className="mt-2 w-full rounded-2xl border border-[color:var(--color-ink)]/15 bg-white/80 px-4 py-3 text-sm text-[var(--color-ink)] outline-none transition file:mr-4 file:rounded-full file:border-0 file:bg-[var(--color-deep)] file:px-4 file:py-2 file:text-xs file:font-semibold file:uppercase file:tracking-[0.2em] file:text-white hover:file:bg-[var(--color-ink)]"
+                className="mt-2 w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-base font-semibold text-white outline-none transition file:mr-4 file:rounded-full file:border-0 file:bg-white file:px-4 file:py-2 file:text-xs file:font-semibold file:uppercase file:tracking-[0.2em] file:text-[var(--color-ink)] hover:file:bg-white/80"
               />
             </div>
             <button
               type="submit"
-              className="rounded-full border border-[rgba(103,181,255,0.5)] bg-[rgba(103,181,255,0.28)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-ink)] transition hover:-translate-y-0.5 hover:bg-[rgba(103,181,255,0.4)]"
+              className="rounded-full border border-white/40 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-ink)] transition hover:-translate-y-0.5 hover:bg-white/80"
             >
               {contact.form.submitLabel}
             </button>
-            <p className="text-xs text-[color:var(--color-ink)]/60">
+            <p className="text-sm font-semibold text-white/70">
               {contact.form.recaptcha}
             </p>
           </div>
         </form>
+      </div>
       </div>
     </section>
   );

@@ -24,7 +24,7 @@ export default function WhoWeAre() {
                 {whoWeAre.headline}
               </h2>
               <p
-                className="fade-up section-description max-w-lg"
+                className="fade-up section-description max-w-lg text-lg font-semibold"
                 style={{ animationDelay: "0.22s" }}
               >
                 {whoWeAre.body}

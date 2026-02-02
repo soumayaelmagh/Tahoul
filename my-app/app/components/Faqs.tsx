@@ -1,9 +1,25 @@
 import { faqs } from "../content";
 
+const highlightEmail = (text: string) => {
+  const email = "Info@tahoul.com";
+  if (!text.includes(email)) {
+    return text;
+  }
+  return text.split(email).map((part, index, parts) => (
+    <span key={`${email}-${index}`}>
+      {part}
+      {index < parts.length - 1 ? (
+        <span className="font-semibold text-[var(--color-deep)]">{email}</span>
+      ) : null}
+    </span>
+  ));
+};
+
 export default function Faqs() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+    <section className="flex min-h-screen items-center bg-white py-16 pt-28 md:py-24 md:pt-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div className="space-y-5">
           <p
             className="section-eyebrow fade-up uppercase tracking-[0.45em]"
@@ -17,7 +33,7 @@ export default function Faqs() {
           >
             {faqs.title}
           </h2>
-          <div className="pulse-line h-1 w-40 rounded-full bg-[rgba(47,84,118,0.12)]" />
+          <div className="pulse-line h-1 w-56 rounded-full bg-[rgba(47,84,118,0.12)]" />
         </div>
         <div className="space-y-4">
           {faqs.items.map((item) => (
@@ -32,12 +48,13 @@ export default function Faqs() {
                   <span className="hidden group-open:inline">-</span>
                 </span>
               </summary>
-              <p className="mt-3 text-sm text-white/75">
-                {item.answer}
+              <p className="mt-3 text-base font-semibold text-white/85">
+                {highlightEmail(item.answer)}
               </p>
             </details>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

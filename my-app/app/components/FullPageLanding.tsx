@@ -37,12 +37,14 @@ const sectionsConfig = [
     id: "vision-mission",
     label: "Vision & Mission",
     navBackground: baseSectionBackground,
+    navTone: "light",
   },
   { id: "services", label: "Services", navBackground: baseSectionBackground },
   {
     id: "our-leadership",
     label: "Our Leadership",
     navBackground: baseSectionBackground,
+    navTone: "light",
   },
   {
     id: "our-promise",
@@ -53,9 +55,15 @@ const sectionsConfig = [
     id: "testimonials",
     label: "Testimonials",
     navBackground: baseSectionBackground,
+    navTone: "light",
   },
   { id: "faqs", label: "FAQs", navBackground: baseSectionBackground },
-  { id: "contact", label: "Contact", navBackground: baseSectionBackground },
+  {
+    id: "contact",
+    label: "Contact",
+    navBackground: baseSectionBackground,
+    navTone: "light",
+  },
 ];
 
 export default function FullPageLanding() {

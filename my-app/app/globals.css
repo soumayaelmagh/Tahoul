@@ -62,7 +62,8 @@ html {
 
 .section-description {
   color: rgba(15, 28, 39, 0.7);
-  font-size: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
   line-height: 1.7;
   max-width: 60ch;
 }
@@ -167,6 +168,15 @@ html {
   background: rgba(103, 181, 255, 0.85);
   border-color: rgba(103, 181, 255, 0.85);
   transform: scale(1.2);
+}
+
+.testimonial-dots.dark button {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.testimonial-dots.dark button.active {
+  background: #ffffff;
+  border-color: #ffffff;
 }
 
 @media (prefers-reduced-motion: reduce) {

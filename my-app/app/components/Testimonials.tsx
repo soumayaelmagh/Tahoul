@@ -58,23 +58,24 @@ export default function Testimonials() {
   const marqueeLogos = [...logoSources, ...logoSources];
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+    <section className="flex min-h-screen items-center bg-[#0f1c27] py-16 pt-28 text-white md:py-24 md:pt-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div className="space-y-5">
           <p
-            className="section-eyebrow fade-up uppercase tracking-[0.45em]"
+            className="section-eyebrow fade-up uppercase tracking-[0.45em] !text-white"
             style={{ animationDelay: "0s" }}
           >
             {testimonials.eyebrow}
           </p>
           <h2
-            className="section-title fade-up font-display text-3xl md:text-4xl"
+            className="section-title fade-up font-display text-3xl text-white md:text-4xl"
             style={{ animationDelay: "0.1s" }}
           >
             {testimonials.title}
           </h2>
           <p
-            className="section-description fade-up"
+            className="section-description fade-up !text-white/85"
             style={{ animationDelay: "0.2s" }}
           >
             {testimonials.subtitle}
@@ -94,23 +95,23 @@ export default function Testimonials() {
                 key={`${item.name}-${index}`}
                 className="testimonial-slide w-full flex-none"
               >
-                <div className="card-hover relative overflow-hidden rounded-[28px] border border-white/80 bg-white/90 p-7 shadow-[0_18px_45px_rgba(15,28,39,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(15,28,39,0.18)]">
+                <div className="card-hover relative overflow-hidden rounded-[28px] border border-white/15 bg-white/10 p-7 shadow-[0_18px_45px_rgba(15,28,39,0.4)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(15,28,39,0.6)]">
                   <div className="absolute -right-16 -top-14 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(103,181,255,0.4),transparent_70%)] blur-2xl" />
                   <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-[radial-gradient(circle,rgba(47,84,118,0.35),transparent_70%)] blur-2xl" />
-                  <div className="absolute inset-0 bg-[linear-gradient(140deg,rgba(255,255,255,0.6),transparent_65%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(140deg,rgba(255,255,255,0.08),transparent_65%)]" />
                   <div className="flex items-start gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl text-6xl text-[#0f1c27]">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl text-6xl text-white">
                       “
                     </div>
                     <div className="space-y-4">
-                      <p className="text-sm text-[var(--color-ink)]/70">
+                      <p className="text-base font-semibold text-white/85">
                         {item.quote}
                       </p>
                       <div>
-                        <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-ink)]/55">
+                        <p className="text-xs uppercase tracking-[0.3em] text-white/60">
                           {item.name}
                         </p>
-                        <p className="text-sm font-semibold text-[var(--color-deep)]">
+                        <p className="text-sm font-semibold text-white">
                           {item.title} · {item.company}
                         </p>
                       </div>
@@ -120,23 +121,12 @@ export default function Testimonials() {
               </div>
             ))}
           </div>
-          <div className="testimonial-dots">
-            {testimonials.items.map((_, index) => (
-              <button
-                key={`dot-${index}`}
-                type="button"
-                className={index === activeIndex ? "active" : undefined}
-                onClick={() => goTo(index)}
-                aria-label={`Show testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
           {totalSlides > 1 ? (
-            <div className="mt-6 flex items-center justify-center gap-4 text-xs uppercase tracking-[0.3em] text-[var(--color-ink)]/60">
+            <div className="mt-6 flex items-center justify-center gap-4 text-xs uppercase tracking-[0.3em] text-white/70">
               <button
                 type="button"
                 onClick={() => goTo(activeIndex - 1)}
-                className="rounded-full border border-[var(--color-ink)]/20 bg-white/70 px-4 py-2 transition hover:-translate-y-0.5 hover:border-[var(--color-steel)] hover:text-[var(--color-deep)]"
+                className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white transition hover:-translate-y-0.5 hover:border-white/50"
                 aria-label="Previous testimonial"
               >
                 Prev
@@ -144,7 +134,7 @@ export default function Testimonials() {
               <button
                 type="button"
                 onClick={() => goTo(activeIndex + 1)}
-                className="rounded-full border border-[var(--color-ink)]/20 bg-white/70 px-4 py-2 transition hover:-translate-y-0.5 hover:border-[var(--color-steel)] hover:text-[var(--color-deep)]"
+                className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white transition hover:-translate-y-0.5 hover:border-white/50"
                 aria-label="Next testimonial"
               >
                 Next
@@ -153,8 +143,8 @@ export default function Testimonials() {
           ) : null}
         </div>
       </div>
-      <div className="mt-14">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-ink)]/50">
+      <div className="mt-20">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
           Trusted by leading organizations
         </p>
         <div className="mt-6 flex justify-center">
@@ -174,6 +164,7 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

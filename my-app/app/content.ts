@@ -3,7 +3,6 @@ export const navLinks = [
   { label: "Our Mission", href: "#vision-mission" },
   { label: "Services", href: "#services" },
   { label: "Team", href: "#our-leadership" },
-  { label: "Our Promise", href: "#our-promise" },
 ];
 
 export const navCta = { label: "Contact Us", href: "#contact" };
