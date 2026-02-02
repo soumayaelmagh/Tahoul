@@ -22,10 +22,13 @@ export default function Hero() {
             style={{ animationDelay: "0.3s" }}
           >
             <a
-              className="sheen rounded-full border border-[rgba(103,181,255,0.5)] bg-[rgba(103,181,255,0.3)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:-translate-y-0.5 hover:bg-[rgba(103,181,255,0.45)]"
+              className="cta-animated rounded-full border border-[rgba(103,181,255,0.5)] bg-[rgba(103,181,255,0.3)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:-translate-y-0.5 hover:bg-[rgba(103,181,255,0.45)]"
               href={hero.primaryCta.href}
             >
-              {hero.primaryCta.label}
+              <span>{hero.primaryCta.label}</span>
+              <span className="cta-arrow" aria-hidden="true">
+                →
+              </span>
             </a>
             <a
               className="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/20"

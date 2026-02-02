@@ -51,10 +51,13 @@ export default function Navbar({
             </a>
           ))}
           <a
-            className={`sheen hidden items-center rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition hover:brightness-110 lg:inline-flex ${ctaClass}`}
+            className={`cta-animated hidden items-center rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition hover:brightness-110 lg:inline-flex ${ctaClass}`}
             href={navCta.href}
           >
-            {navCta.label}
+            <span>{navCta.label}</span>
+            <span className="cta-arrow" aria-hidden="true">
+              →
+            </span>
           </a>
         </div>
       </div>

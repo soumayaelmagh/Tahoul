@@ -571,6 +571,26 @@ html {
     0 8px 18px rgba(47, 84, 118, 0.25);
 }
 
+.cta-animated {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cta-arrow {
+  display: inline-block;
+  transform: translateX(-6px);
+  opacity: 0;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.cta-animated:hover .cta-arrow,
+.cta-animated:focus-visible .cta-arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .fade-up {
   animation: fadeUp 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -624,6 +644,7 @@ html {
     opacity: 1;
   }
 }
+
 
 @keyframes floatSlow {
   0%,
@@ -722,7 +743,8 @@ html {
 
   .fade-up,
   .fade-in,
-  .float-slow {
+  .float-slow,
+  .cta-animated {
     animation: none;
   }
 
