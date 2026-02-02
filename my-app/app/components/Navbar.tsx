@@ -27,7 +27,7 @@ export default function Navbar({
     <nav
       className="fixed left-0 right-0 top-0 z-50 bg-transparent border-b border-transparent"
     >
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-8 px-8 py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-5">
         <div className="flex items-center">
           <Image
             src="/logo-tr.png"
@@ -35,7 +35,7 @@ export default function Navbar({
             width={360}
             height={120}
             priority
-            className="block h-12 w-auto md:h-14"
+            className="block h-14 w-auto md:h-16"
           />
         </div>
         <div
