@@ -5,7 +5,7 @@ export default function Contact() {
     "https://www.google.com/maps?q=6413%20King%20Abdulaziz%20Rd%2C%20Al%20Arid%2C%20Riyadh%2013335%2C%20Saudi%20Arabia&output=embed";
 
   return (
-    <section className="bg-[#0f1c27] py-16 pt-28 text-white md:py-24 md:pt-32">
+    <section className="bg-[#0f1c27] py-12 pt-20 text-white sm:pt-24 md:py-24 md:pt-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-7">

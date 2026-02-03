@@ -6,7 +6,7 @@ import { whoWeAre } from "../content";
 
 export default function WhoWeAre() {
   return (
-    <div className="relative flex min-h-screen items-center bg-white py-16 pt-28 md:py-24 md:pt-32">
+    <div className="relative flex min-h-screen items-center bg-white py-12 pt-20 sm:pt-24 md:py-24 md:pt-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="slide-in">
           <p

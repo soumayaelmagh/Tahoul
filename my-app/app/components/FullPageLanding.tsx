@@ -70,12 +70,14 @@ const sectionsConfig = [
 export default function FullPageLanding() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [navVisible, setNavVisible] = useState(false);
   const enabledRef = useRef(false);
   const lockedRef = useRef(false);
   const lockTimerRef = useRef<number | null>(null);
   const deltaRef = useRef(0);
   const deltaTimerRef = useRef<number | null>(null);
   const rafRef = useRef<number | null>(null);
+  const navHideTimerRef = useRef<number | null>(null);
 
   const numbers = useMemo(
     () => sectionsConfig.map((_, index) => String(index + 1).padStart(2, "0")),
@@ -98,6 +100,17 @@ export default function FullPageLanding() {
       : {
           backgroundImage: navBackground,
         };
+
+  const revealSideNav = () => {
+    setNavVisible(true);
+    if (navHideTimerRef.current !== null) {
+      window.clearTimeout(navHideTimerRef.current);
+    }
+    navHideTimerRef.current = window.setTimeout(() => {
+      setNavVisible(false);
+      navHideTimerRef.current = null;
+    }, 900);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -213,6 +226,7 @@ export default function FullPageLanding() {
         rafRef.current = null;
         updateActiveIndex();
       });
+      revealSideNav();
     };
 
     const handleWheel = (event: WheelEvent) => {
@@ -223,6 +237,8 @@ export default function FullPageLanding() {
         return;
       }
       event.preventDefault();
+
+      revealSideNav();
 
       if (lockedRef.current) {
         return;
@@ -271,6 +287,7 @@ export default function FullPageLanding() {
       if (!enabledRef.current || lockedRef.current) {
         return;
       }
+      revealSideNav();
       const target = event.target as HTMLElement | null;
       const tag = target?.tagName?.toLowerCase();
       if (
@@ -377,6 +394,9 @@ export default function FullPageLanding() {
       if (rafRef.current !== null) {
         window.cancelAnimationFrame(rafRef.current);
       }
+      if (navHideTimerRef.current !== null) {
+        window.clearTimeout(navHideTimerRef.current);
+      }
     };
   }, []);
 
@@ -388,6 +408,7 @@ export default function FullPageLanding() {
       return;
     }
     event.preventDefault();
+    revealSideNav();
     const target = containerRef.current.querySelector<HTMLElement>(
       `.fullpage-section[data-index="${index}"]`
     );
@@ -409,10 +430,13 @@ export default function FullPageLanding() {
   const totalLabel = String(sectionsConfig.length).padStart(2, "0");
 
   return (
-    <div className="relative min-h-screen text-(--color-ink)">
+    <div className="relative min-h-screen text-[color:var(--color-ink)]">
       <Background />
 
-      <nav className="pp-nav" aria-label="Section navigation">
+      <nav
+        className={`pp-nav ${navVisible ? "is-visible" : ""}`}
+        aria-label="Section navigation"
+      >
         <div className="pp-nav-inner">
           <div className="pp-nav-current" aria-hidden="true">
             <div

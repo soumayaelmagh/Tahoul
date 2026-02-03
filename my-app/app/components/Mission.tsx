@@ -4,7 +4,7 @@ import { mission } from "../content";
 
 export default function Mission() {
   return (
-    <section className="relative flex min-h-screen items-center bg-[#0f1c27] py-16 pt-28 md:py-24 md:pt-32">
+    <section className="relative flex min-h-screen items-center bg-[#0f1c27] py-12 pt-20 sm:pt-24 md:py-24 md:pt-32">
       <div className="pointer-events-none absolute -right-12 -top-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(103,181,255,0.18),transparent_70%)] blur-3xl" />
       <div className="pointer-events-none absolute -left-10 bottom-0 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(47,84,118,0.28),transparent_70%)] blur-3xl" />
       <div
@@ -52,7 +52,7 @@ export default function Mission() {
                   {mission.visionTitle}
                 </h3>
               </div>
-              <p className="text-xl font-semibold leading-relaxed text-white">
+              <p className="text-base font-semibold leading-relaxed text-white sm:text-lg lg:text-xl">
                 {mission.visionBody}
               </p>
             </div>
@@ -79,7 +79,7 @@ export default function Mission() {
                   {mission.title}
                 </h3>
               </div>
-              <p className="text-xl font-semibold leading-relaxed text-white">
+              <p className="text-base font-semibold leading-relaxed text-white sm:text-lg lg:text-xl">
                 {mission.body}
               </p>
             </div>

@@ -9,7 +9,7 @@ const highlightEmail = (text: string) => {
     <span key={`${email}-${index}`}>
       {part}
       {index < parts.length - 1 ? (
-        <span className="font-semibold text-(--color-deep)">{email}</span>
+        <span className="font-semibold text-[var(--color-deep)]">{email}</span>
       ) : null}
     </span>
   ));
@@ -17,7 +17,7 @@ const highlightEmail = (text: string) => {
 
 export default function Faqs() {
   return (
-    <section className="flex h-screen items-center overflow-hidden bg-white py-16 pt-28 md:py-24 md:pt-32">
+    <section className="flex min-h-screen items-center overflow-visible bg-white py-12 pt-20 sm:pt-24 md:py-24 md:pt-32 lg:h-screen lg:overflow-hidden">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid min-h-0 gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-5">
@@ -35,11 +35,11 @@ export default function Faqs() {
             </h2>
             <div className="pulse-line h-1 w-56 rounded-full bg-[rgba(47,84,118,0.12)]" />
           </div>
-          <div className="min-h-0 h-[60vh] space-y-4 bg-white  pr-2">
+          <div className="min-h-0 space-y-4 overflow-visible pr-2 lg:h-[60vh] lg:overflow-y-auto">
             {faqs.items.map((item) => (
               <div
                 key={item.question}
-                className="group card-hover rounded-2xl border border-white bg-[#0f1c27] p-5 text-white shadow-[0_18px_40px_rgba(15,28,39,0.35)]"
+                className="group card-hover rounded-2xl border border-white/10 bg-[#0f1c27] p-5 text-white shadow-[0_18px_40px_rgba(15,28,39,0.35)]"
               >
                 <details>
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-white">

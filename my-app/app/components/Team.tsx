@@ -4,7 +4,7 @@ import { team } from "../content";
 
 export default function Team() {
   return (
-    <section className="bg-[#0f1c27] py-16 pt-28 md:py-24 md:pt-32">
+    <section className="bg-[#0f1c27] py-12 pt-20 sm:pt-24 md:py-24 md:pt-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="space-y-5">
@@ -23,7 +23,7 @@ export default function Team() {
             </h2>
           ) : null}
           <p
-            className="fade-up max-w-lg text-left text-lg font-semibold text-white/90 whitespace-nowrap"
+            className="fade-up max-w-lg text-left text-lg font-semibold text-white/90 lg:whitespace-nowrap"
             style={{ animationDelay: "0.2s" }}
           >
             {team.description}

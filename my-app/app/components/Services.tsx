@@ -97,7 +97,7 @@ export default function Services() {
   };
 
   return (
-    <section className="flex min-h-screen items-center bg-white py-16 pt-28 md:py-24 md:pt-32">
+    <section className="flex min-h-screen items-center bg-white py-12 pt-20 sm:pt-24 md:py-24 md:pt-32">
       <div className="mx-auto w-full max-w-6xl px-6">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="space-y-5">
@@ -114,7 +114,7 @@ export default function Services() {
           <article
             key={service.title}
             tabIndex={0}
-            className="fade-up group relative flex-1 overflow-hidden rounded-3xl border border-[#0f1c27]/50 shadow-[0_18px_40px_rgba(15,28,39,0.2)] transition-[flex,transform,box-shadow] duration-500 ease-out hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-sky)/60 md:hover:flex-[2.6]"
+            className="fade-up group relative flex-1 overflow-hidden rounded-3xl border border-[#0f1c27]/50 shadow-[0_18px_40px_rgba(15,28,39,0.2)] transition-[flex,transform,box-shadow] duration-500 ease-out hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sky)]/60 md:hover:flex-[2.6]"
             style={{ animationDelay: `${0.05 + index * 0.05}s` }}
           >
             <div

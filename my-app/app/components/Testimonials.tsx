@@ -58,7 +58,7 @@ export default function Testimonials() {
   const marqueeLogos = [...logoSources, ...logoSources];
 
   return (
-    <section className="flex min-h-screen items-center bg-[#0f1c27] py-16 pt-28 text-white md:py-24 md:pt-32">
+    <section className="flex min-h-screen items-center bg-[#0f1c27] py-12 pt-20 text-white sm:pt-24 md:py-24 md:pt-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div className="space-y-5">
@@ -143,7 +143,7 @@ export default function Testimonials() {
           ) : null}
         </div>
       </div>
-      <div className="mt-20">
+      <div className="mt-12 sm:mt-16 lg:mt-20">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
           Trusted by leading organizations
         </p>

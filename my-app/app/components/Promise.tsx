@@ -2,7 +2,7 @@ import { promise } from "../content";
 
 export default function Promise() {
   return (
-    <section className="relative flex min-h-screen items-center bg-[#6f6f6f] py-16 pt-28 md:py-24 md:pt-32">
+    <section className="relative flex min-h-screen items-center bg-[#6f6f6f] py-12 pt-20 sm:pt-24 md:py-24 md:pt-32">
       <div className="pointer-events-none absolute inset-0 opacity-30">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.08)_50%,rgba(255,255,255,0.08)_75%,transparent_75%,transparent)] bg-size-[72px_72px]" />
       </div>

@@ -13,8 +13,8 @@ export default function Footer() {
 
   return (
     <footer className="flex min-h-screen w-full items-center bg-white">
-      <div className="mx-auto w-full max-w-6xl px-6 py-16 text-(--color-ink)/70">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.7fr_0.9fr]">
+      <div className="mx-auto w-full max-w-6xl px-6 py-12 text-[color:var(--color-ink)]/70 sm:py-16">
+        <div className="grid gap-10 text-center lg:grid-cols-[1.2fr_0.7fr_0.9fr] lg:text-left">
           <div className="space-y-6">
             <Image
               src="/logo-tr.png"
@@ -23,26 +23,26 @@ export default function Footer() {
               height={130}
               className="h-24 w-auto"
             />
-            <p className="max-w-sm text-base font-semibold text-(--color-ink)/65">
+            <p className="max-w-sm text-base font-semibold text-[color:var(--color-ink)]/65 lg:mx-0 mx-auto">
               At Tahoul, we create enduring value by partnering with leaders to
               shape resilient organizations and deliver measurable impact.
             </p>
           </div>
 
           <div className="space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-(--color-ink)/70">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-ink)]/70">
               Useful Links
             </p>
-            <ul className="space-y-3 text-sm font-semibold text-(--color-ink)/65">
+            <ul className="space-y-3 text-sm font-semibold text-[color:var(--color-ink)]/65">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="transition hover:text-(--color-deep)">
+                  <a href={link.href} className="transition hover:text-[var(--color-deep)]">
                     {link.label}
                   </a>
                 </li>
               ))}
               <li>
-                <a href="#faqs" className="transition hover:text-(--color-deep)">
+                <a href="#faqs" className="transition hover:text-[var(--color-deep)]">
                   FAQs
                 </a>
               </li>
@@ -50,18 +50,18 @@ export default function Footer() {
           </div>
 
           <div className="space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-(--color-ink)/70">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-ink)]/70">
               Find us
             </p>
-            <div className="space-y-3 text-sm font-semibold text-(--color-ink)/65">
+            <div className="space-y-3 text-sm font-semibold text-[color:var(--color-ink)]/65">
              
               {phone ? (
-                <p className="text-base font-semibold text-(--color-ink)">
+                <p className="text-base font-semibold text-[color:var(--color-ink)]">
                   {phone}
                 </p>
               ) : null}
               {email ? (
-                <p className="text-base font-semibold text-(--color-ink)">
+                <p className="text-base font-semibold text-[color:var(--color-ink)]">
                   {email}
                 </p>
               ) : null}
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-(--color-ink)/15 pt-6 text-center text-xs font-semibold text-(--color-ink)/60">
+        <div className="mt-10 border-t border-[color:var(--color-ink)]/15 pt-6 text-center text-xs font-semibold text-[color:var(--color-ink)]/60">
           {footer.copyright}
         </div>
       </div>
