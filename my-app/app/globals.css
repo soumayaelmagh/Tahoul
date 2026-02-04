@@ -585,6 +585,163 @@ html {
     0 8px 18px rgba(47, 84, 118, 0.25);
 }
 
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 1.35rem 1.4rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 28, 39, 0.12);
+  box-shadow: 0 18px 42px rgba(47, 84, 118, 0.14);
+  isolation: isolate;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: conic-gradient(
+    from 140deg,
+    rgba(15, 28, 39, 0.45),
+    rgba(47, 84, 118, 0.35),
+    transparent 55%
+  );
+  opacity: 0.6;
+  animation: statHalo 18s linear infinite;
+  z-index: 0;
+}
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.45)
+  );
+  z-index: 0;
+}
+
+.stat-content {
+  position: relative;
+  z-index: 1;
+}
+
+.stat-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  background: rgba(103, 181, 255, 0.16);
+  border: 1px solid rgba(15, 28, 39, 0.12);
+  box-shadow: 0 12px 26px rgba(47, 84, 118, 0.18);
+  color: var(--color-deep);
+  transition: transform 220ms ease;
+}
+
+.stat-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.stat-card:hover .stat-icon-wrap {
+  transform: translateY(-3px);
+}
+
+.stat-orbit {
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  background: rgba(15, 28, 39, 0.08);
+  border: 1px dashed rgba(15, 28, 39, 0.55);
+  animation: orbitSpin 12s linear infinite;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.stat-orbit::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(15, 28, 39, 0.85);
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(15, 28, 39, 0.65);
+}
+
+.stat-orbit.secondary {
+  width: 105px;
+  height: 105px;
+  right: -6px;
+  top: -6px;
+  border-style: solid;
+  border-color: rgba(47, 84, 118, 0.55);
+  background: rgba(15, 28, 39, 0.06);
+  animation-duration: 18s;
+  animation-direction: reverse;
+  opacity: 0.5;
+}
+
+.stat-orbit.secondary::before {
+  width: 8px;
+  height: 8px;
+  background: rgba(15, 28, 39, 0.8);
+}
+
+.stat-spark {
+  position: absolute;
+  left: 22px;
+  bottom: 18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: rgba(15, 28, 39, 0.35);
+  box-shadow: 0 0 18px rgba(15, 28, 39, 0.55);
+  transform: rotate(45deg);
+  animation: sparkPulse 4.5s ease-in-out infinite;
+  z-index: 0;
+}
+
+.stat-value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: var(--font-display), "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--color-deep);
+}
+
+.stat-prefix {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.stat-number {
+  font-weight: 600;
+  text-shadow: 0 10px 20px rgba(47, 84, 118, 0.2);
+}
+
+.stat-label {
+  margin-top: 0.7rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(15, 28, 39, 0.55);
+  font-weight: 700;
+}
+
 .cta-animated {
   position: relative;
   display: inline-flex;
@@ -667,6 +824,41 @@ html {
   }
   50% {
     transform: translateY(-12px);
+  }
+}
+
+@keyframes orbitSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes statHalo {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.25;
+  }
+}
+
+@keyframes sparkPulse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-6px) rotate(45deg) scale(1.15);
+    opacity: 0.9;
   }
 }
 
@@ -765,7 +957,10 @@ html {
   .gradient-mesh,
   .glow-orb,
   .wave-line,
-  .bubble-pop {
+  .bubble-pop,
+  .stat-card::before,
+  .stat-orbit,
+  .stat-spark {
     animation: none;
   }
 
