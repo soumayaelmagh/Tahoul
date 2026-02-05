@@ -29,8 +29,20 @@ const azerDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Tahoul Management Consultancy",
+  metadataBase: new URL("https://tahoul.com"),
+  title: {
+    default: "Tahoul Management Consultancy",
+    template: "%s | Tahoul",
+  },
   description: "Transform your business with tailored consulting solutions.",
+  openGraph: {
+    type: "website",
+    siteName: "Tahoul",
+    url: "https://tahoul.com",
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default async function RootLayout({
