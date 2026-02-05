@@ -1,6 +1,8 @@
-import { promise } from "../content";
+import { useTranslations } from "next-intl";
 
 export default function Promise() {
+  const t = useTranslations("Promise");
+
   return (
     <section className="relative flex min-h-screen items-center bg-[#6f6f6f] py-12 pt-20 sm:pt-24 md:py-24 md:pt-32">
       <div className="pointer-events-none absolute inset-0 opacity-30">
@@ -18,14 +20,14 @@ export default function Promise() {
         <div className="slide-in text-center text-white">
           <div className="text-5xl text-white/60 md:text-6xl">“</div>
           <h2 className="mt-6 text-2xl font-semibold uppercase tracking-[0.25em] text-white md:text-4xl">
-            {promise.title}
+            {t("title")}
           </h2>
           <div className="mx-auto mt-6 h-0.5 w-16 rounded-full bg-white/60" />
           <p className="mt-6 text-lg font-semibold text-white">
-            {promise.eyebrow}
+            {t("eyebrow")}
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-base font-semibold text-white/85 md:text-lg">
-            {promise.body}
+            {t("body")}
           </p>
         </div>
       </div>

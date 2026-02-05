@@ -1,8 +1,10 @@
 "use client";
 
-import { mission } from "../content";
+import { useTranslations } from "next-intl";
 
 export default function Mission() {
+  const t = useTranslations("Mission");
+
   return (
     <section className="relative flex min-h-screen items-center bg-[#0f1c27] py-12 pt-20 sm:pt-24 md:py-24 md:pt-32">
       <div className="pointer-events-none absolute -right-12 -top-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(103,181,255,0.18),transparent_70%)] blur-3xl" />
@@ -16,16 +18,15 @@ export default function Mission() {
       />
       <div className="mx-auto w-full max-w-6xl px-6">
         <div className="slide-in text-white">
-          <p className="section-eyebrow text-white!">{mission.eyebrow}</p>
+          <p className="section-eyebrow text-white!">{t("eyebrow")}</p>
 
           <div className="mt-6 flex flex-wrap items-center gap-4 text-white">
             <span className="text-[0.7rem] font-semibold uppercase tracking-[0.35em]">
-              Vision → Mission
+              {t("kicker")}
             </span>
             <span className="h-px flex-1 bg-white/15" />
             <p className="max-w-xl text-sm text-white">
-              Vision defines the destination; Mission turns it into commitments,
-              priorities, and measurable delivery.
+              {t("kickerDescription")}
             </p>
           </div>
 
@@ -49,11 +50,11 @@ export default function Mission() {
                   </svg>
                 </span>
                 <h3 className="font-display text-3xl text-white md:text-4xl">
-                  {mission.visionTitle}
+                  {t("visionTitle")}
                 </h3>
               </div>
               <p className="text-base font-semibold leading-relaxed text-white sm:text-lg lg:text-xl">
-                {mission.visionBody}
+                {t("visionBody")}
               </p>
             </div>
 
@@ -76,11 +77,11 @@ export default function Mission() {
                   </svg>
                 </span>
                 <h3 className="font-display text-3xl text-white md:text-4xl">
-                  {mission.title}
+                  {t("missionTitle")}
                 </h3>
               </div>
               <p className="text-base font-semibold leading-relaxed text-white sm:text-lg lg:text-xl">
-                {mission.body}
+                {t("missionBody")}
               </p>
             </div>
           </div>

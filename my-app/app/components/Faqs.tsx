@@ -1,4 +1,4 @@
-import { faqs } from "../content";
+import { useTranslations } from "next-intl";
 
 const highlightEmail = (text: string) => {
   const email = "Info@tahoul.com";
@@ -16,6 +16,9 @@ const highlightEmail = (text: string) => {
 };
 
 export default function Faqs() {
+  const t = useTranslations("Faqs");
+  const items = t.raw("items") as Array<{ question: string; answer: string }>;
+
   return (
     <section className="flex min-h-screen items-center overflow-visible bg-white py-12 pt-20 sm:pt-24 md:py-24 md:pt-32 lg:h-screen lg:overflow-hidden">
       <div className="mx-auto max-w-6xl px-6">
@@ -25,18 +28,18 @@ export default function Faqs() {
               className="section-eyebrow fade-up uppercase tracking-[0.45em]"
               style={{ animationDelay: "0s" }}
             >
-              {faqs.eyebrow}
+              {t("eyebrow")}
             </p>
             <h2
               className="section-title fade-up font-display text-3xl md:text-4xl"
               style={{ animationDelay: "0.1s" }}
             >
-              {faqs.title}
+              {t("title")}
             </h2>
             <div className="pulse-line h-1 w-56 rounded-full bg-[rgba(47,84,118,0.12)]" />
           </div>
-          <div className="min-h-0 space-y-4 overflow-visible pr-2 lg:h-[60vh] lg:overflow-y-auto">
-            {faqs.items.map((item) => (
+          <div className="min-h-0 space-y-4 overflow-visible pe-2 lg:h-[60vh] lg:overflow-y-auto">
+            {items.map((item) => (
               <div
                 key={item.question}
                 className="group card-hover rounded-2xl border border-white/10 bg-[#0f1c27] p-5 text-white shadow-[0_18px_40px_rgba(15,28,39,0.35)]"

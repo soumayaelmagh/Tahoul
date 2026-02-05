@@ -1,40 +1,42 @@
 import Image from "next/image";
-
-import { contact, footer, navLinks } from "../content";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
-  const phone =
-    contact.details.find((detail) => detail.label.toLowerCase().includes("tel"))
-      ?.value ?? "";
-  const email =
-    contact.details.find((detail) =>
-      detail.label.toLowerCase().includes("mail")
-    )?.value ?? "";
+  const tFooter = useTranslations("Footer");
+  const tNav = useTranslations("Navigation");
+  const tContact = useTranslations("Contact");
+  const links = tNav.raw("links") as Array<{ label: string; href: string }>;
+  const details = tContact.raw("details") as Array<{
+    type: "address" | "email" | "phone";
+    label: string;
+    value: string;
+  }>;
+  const phone = details.find((detail) => detail.type === "phone")?.value ?? "";
+  const email = details.find((detail) => detail.type === "email")?.value ?? "";
 
   return (
     <footer className="flex min-h-screen w-full items-center bg-white">
       <div className="mx-auto w-full max-w-6xl px-6 py-12 text-[color:var(--color-ink)]/70 sm:py-16">
-        <div className="grid gap-10 text-center lg:grid-cols-[1.2fr_0.7fr_0.9fr] lg:text-left">
+        <div className="grid gap-10 text-center lg:grid-cols-[1.2fr_0.7fr_0.9fr] lg:text-start">
           <div className="space-y-6">
             <Image
               src="/logo-tr.png"
-              alt="Tahoul logo"
+              alt={tNav("logoAlt")}
               width={380}
               height={130}
               className="h-24 w-auto"
             />
             <p className="max-w-sm text-base font-semibold text-[color:var(--color-ink)]/65 lg:mx-0 mx-auto">
-              At Tahoul, we create enduring value by partnering with leaders to
-              shape resilient organizations and deliver measurable impact.
+              {tFooter("blurb")}
             </p>
           </div>
 
           <div className="space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-ink)]/70">
-              Useful Links
+              {tFooter("usefulLinks")}
             </p>
             <ul className="space-y-3 text-sm font-semibold text-[color:var(--color-ink)]/65">
-              {navLinks.map((link) => (
+              {links.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="transition hover:text-[var(--color-deep)]">
                     {link.label}
@@ -43,7 +45,7 @@ export default function Footer() {
               ))}
               <li>
                 <a href="#faqs" className="transition hover:text-[var(--color-deep)]">
-                  FAQs
+                  {tFooter("faqs")}
                 </a>
               </li>
             </ul>
@@ -51,13 +53,15 @@ export default function Footer() {
 
           <div className="space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-ink)]/70">
-              Find us
+              {tFooter("findUs")}
             </p>
             <div className="space-y-3 text-sm font-semibold text-[color:var(--color-ink)]/65">
              
               {phone ? (
                 <p className="text-base font-semibold text-[color:var(--color-ink)]">
-                  {phone}
+                  <span dir="ltr" className="ltr-number">
+                    {phone}
+                  </span>
                 </p>
               ) : null}
               {email ? (
@@ -70,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-[color:var(--color-ink)]/15 pt-6 text-center text-xs font-semibold text-[color:var(--color-ink)]/60">
-          {footer.copyright}
+          {tFooter("copyright")}
         </div>
       </div>
     </footer>

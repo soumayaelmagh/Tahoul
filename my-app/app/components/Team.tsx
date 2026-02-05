@@ -1,8 +1,15 @@
 import Image from "next/image";
-
-import { team } from "../content";
+import { useTranslations } from "next-intl";
 
 export default function Team() {
+  const t = useTranslations("Team");
+  const members = t.raw("members") as Array<{
+    name: string;
+    role: string;
+    bio: string;
+    image?: string;
+  }>;
+
   return (
     <section className="bg-[#0f1c27] py-12 pt-20 sm:pt-24 md:py-24 md:pt-32">
       <div className="mx-auto max-w-6xl px-6">
@@ -12,26 +19,26 @@ export default function Team() {
             className="section-eyebrow fade-up uppercase  text-white! tracking-[0.45em]"
             style={{ animationDelay: "0s" }}
           >
-            {team.eyebrow}
+            {t("eyebrow")}
           </p>
-          {team.title ? (
+          {t("title") ? (
             <h2
               className="section-title fade-up font-display text-3xl text-white md:text-4xl"
               style={{ animationDelay: "0.1s" }}
             >
-              {team.title}
+              {t("title")}
             </h2>
           ) : null}
           <p
-            className="fade-up max-w-lg text-left text-lg font-semibold text-white/90 lg:whitespace-nowrap"
+            className="fade-up max-w-lg text-start text-lg font-semibold text-white/90 lg:whitespace-nowrap"
             style={{ animationDelay: "0.2s" }}
           >
-            {team.description}
+            {t("description")}
           </p>
           </div>
         </div>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {team.members.map((member) => {
+        {members.map((member) => {
           const initials = member.name
             .split(" ")
             .map((word) => word[0])
@@ -58,7 +65,7 @@ export default function Team() {
                         {initials}
                       </p>
                       <p className="mt-2 text-[10px] uppercase tracking-[0.3em] text-white/70">
-                        Photo coming soon
+                        {t("photoPlaceholder")}
                       </p>
                     </div>
                   </div>

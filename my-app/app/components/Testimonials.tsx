@@ -1,13 +1,20 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
-import { testimonials } from "../content";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Testimonials() {
+  const locale = useLocale();
+  const t = useTranslations("Testimonials");
+  const items = t.raw("items") as Array<{
+    quote: string;
+    name: string;
+    title: string;
+    company: string;
+  }>;
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const totalSlides = testimonials.items.length;
+  const totalSlides = items.length;
 
   useEffect(() => {
     if (activeIndex >= totalSlides) {
@@ -44,18 +51,20 @@ export default function Testimonials() {
   };
 
   const logoSources = [
-    { src: "/clients/1.png", alt: "Client logo 1" },
-    { src: "/clients/2.png", alt: "Client logo 2" },
-    { src: "/clients/3.png", alt: "Client logo 3" },
-    { src: "/clients/4.png", alt: "Client logo 4" },
-    { src: "/clients/5.png", alt: "Client logo 5" },
-    { src: "/clients/6.png", alt: "Client logo 6" },
-    { src: "/clients/7.png", alt: "Client logo 7" },
-    { src: "/clients/8.png", alt: "Client logo 8" },
-    { src: "/clients/9.png", alt: "Client logo 9" },
-    { src: "/clients/10.png", alt: "Client logo 10" },
+    { src: "/clients/1.png", alt: t("logoAlt", { index: 1 }) },
+    { src: "/clients/2.png", alt: t("logoAlt", { index: 2 }) },
+    { src: "/clients/3.png", alt: t("logoAlt", { index: 3 }) },
+    { src: "/clients/4.png", alt: t("logoAlt", { index: 4 }) },
+    { src: "/clients/5.png", alt: t("logoAlt", { index: 5 }) },
+    { src: "/clients/6.png", alt: t("logoAlt", { index: 6 }) },
+    { src: "/clients/7.png", alt: t("logoAlt", { index: 7 }) },
+    { src: "/clients/8.png", alt: t("logoAlt", { index: 8 }) },
+    { src: "/clients/9.png", alt: t("logoAlt", { index: 9 }) },
+    { src: "/clients/10.png", alt: t("logoAlt", { index: 10 }) },
   ];
   const marqueeLogos = [...logoSources, ...logoSources];
+
+  const translatePercent = (locale === "ar" ? activeIndex : -activeIndex) * 100;
 
   return (
     <section className="flex min-h-screen items-center bg-[#0f1c27] py-12 pt-20 text-white sm:pt-24 md:py-24 md:pt-32">
@@ -66,19 +75,19 @@ export default function Testimonials() {
             className="section-eyebrow fade-up uppercase tracking-[0.45em] !text-white"
             style={{ animationDelay: "0s" }}
           >
-            {testimonials.eyebrow}
+            {t("eyebrow")}
           </p>
           <h2
             className="section-title fade-up font-display text-3xl text-white md:text-4xl"
             style={{ animationDelay: "0.1s" }}
           >
-            {testimonials.title}
+            {t("title")}
           </h2>
           <p
             className="section-description fade-up !text-white/85"
             style={{ animationDelay: "0.2s" }}
           >
-            {testimonials.subtitle}
+            {t("subtitle")}
           </p>
         </div>
         <div
@@ -88,9 +97,9 @@ export default function Testimonials() {
         >
           <div
             className="testimonial-track flex w-full flex-nowrap transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            style={{ transform: `translateX(${translatePercent}%)` }}
           >
-            {testimonials.items.map((item, index) => (
+            {items.map((item, index) => (
               <div
                 key={`${item.name}-${index}`}
                 className="testimonial-slide w-full flex-none"
@@ -127,17 +136,17 @@ export default function Testimonials() {
                 type="button"
                 onClick={() => goTo(activeIndex - 1)}
                 className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white transition hover:-translate-y-0.5 hover:border-white/50"
-                aria-label="Previous testimonial"
+                aria-label={t("prev")}
               >
-                Prev
+                {t("prev")}
               </button>
               <button
                 type="button"
                 onClick={() => goTo(activeIndex + 1)}
                 className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white transition hover:-translate-y-0.5 hover:border-white/50"
-                aria-label="Next testimonial"
+                aria-label={t("next")}
               >
-                Next
+                {t("next")}
               </button>
             </div>
           ) : null}
@@ -145,10 +154,10 @@ export default function Testimonials() {
       </div>
       <div className="mt-12 sm:mt-16 lg:mt-20">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
-          Trusted by leading organizations
+          {t("trustedBy")}
         </p>
         <div className="mt-6 flex justify-center">
-          <div className="logo-marquee marquee-wide">
+          <div className="logo-marquee marquee-wide" dir="ltr">
             <div className="logo-track">
               {marqueeLogos.map((logo, index) => (
                 <div key={`${logo.src}-${index}`} className="logo-item">

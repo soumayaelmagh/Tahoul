@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { getLocale } from "next-intl/server";
+
 import "./globals.css";
 
 const azerBody = localFont({
@@ -31,13 +33,16 @@ export const metadata: Metadata = {
   description: "Transform your business with tailored consulting solutions.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const direction = locale === "ar" ? "rtl" : "ltr";
+
   return (
-    <html lang="en">
+    <html lang={locale} dir={direction}>
       <body className={`${azerBody.variable} ${azerDisplay.variable} antialiased`}>
         {children}
       </body>

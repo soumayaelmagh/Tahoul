@@ -1,0 +1,241 @@
+{
+  "Home": {
+    "title": "Tahoul Management Consultancy",
+    "description": "Transform your business with tailored consulting solutions."
+  },
+  "Navigation": {
+    "links": [
+      { "label": "Home", "href": "#home" },
+      { "label": "Our Mission", "href": "#vision-mission" },
+      { "label": "Services", "href": "#services" },
+      { "label": "Team", "href": "#our-leadership" }
+    ],
+    "cta": { "label": "Contact Us", "href": "#contact" },
+    "logoAlt": "Tahoul logo",
+    "menuLabel": "Toggle navigation menu"
+  },
+  "LanguageSwitcher": {
+    "label": "Switch language",
+    "switchToAr": "العربية",
+    "switchToEn": "English"
+  },
+  "Sections": {
+    "navLabel": "Section navigation",
+    "items": [
+      { "id": "home", "label": "Home" },
+      { "id": "who-we-are", "label": "Who We Are" },
+      { "id": "vision-mission", "label": "Vision & Mission" },
+      { "id": "services", "label": "Services" },
+      { "id": "our-leadership", "label": "Our Leadership" },
+      { "id": "our-promise", "label": "Our Promise" },
+      { "id": "testimonials", "label": "Testimonials" },
+      { "id": "faqs", "label": "FAQs" },
+      { "id": "contact", "label": "Contact" },
+      { "id": "footer", "label": "Footer" }
+    ]
+  },
+  "Hero": {
+    "eyebrow": "Transform your business with tailored consulting solutions",
+    "imageAlt": "Tahoul consulting leadership",
+    "title": "Solutions designed for you, not for everyone before you",
+    "primaryCtaLabel": "Contact Us",
+    "secondaryCtaLabel": "Our Services",
+    "tags": [
+      "Strategy",
+      "Organizational Excellence",
+      "Corporate Governance",
+      "Marketing & Communication",
+      "Research & Studies"
+    ]
+  },
+  "WhoWeAre": {
+    "title": "Who We Are",
+    "headline": "A leading Saudi consulting firm.",
+    "body": "We are a Saudi consulting firm helping organizations design and execute innovative, sustainable strategies. By combining deep local insight with global best practices, we enable our clients to achieve measurable results, strengthen competitiveness, and deliver long-term value.",
+    "imageAlt": "Who we are",
+    "stats": [
+      { "value": 100, "label": "Projects Executed by Our Team" },
+      { "value": 70, "label": "Experts in Our Network" },
+      { "value": 200, "label": "Frameworks for Public and Private Sectors" }
+    ]
+  },
+  "Mission": {
+    "eyebrow": "Our Vision & Mission",
+    "kicker": "Vision → Mission",
+    "kickerDescription": "Vision defines the destination; Mission turns it into commitments, priorities, and measurable delivery.",
+    "visionTitle": "Our Vision",
+    "visionBody": "To be the trusted consulting partner in Saudi Arabia for organizations shaping the next economy, recognized for delivering measurable impact, strengthening governance, and building the capabilities that sustain long-term growth.",
+    "missionTitle": "Our Mission",
+    "missionBody": "To provide comprehensive and innovative consulting solutions that help our clients tackle future challenges, delivering value through deep expertise, continuous innovation, and strategic partnerships, with a commitment to the highest standards of professionalism."
+  },
+  "Services": {
+    "eyebrow": "Our Services",
+    "items": [
+      {
+        "id": "strategy",
+        "title": "Strategy",
+        "points": [
+          "Building & Developing Strategies",
+          "Developing & Designing Programs",
+          "Planning & Evaluating Strategic Decisions",
+          "Implementing Strategies & Strategic Plans"
+        ]
+      },
+      {
+        "id": "organizationalExcellence",
+        "title": "Organizational Excellence",
+        "points": [
+          "Building Business Models",
+          "Organizational Structuring and Design",
+          "Change Management",
+          "Policies and Procedures",
+          "Performance Management"
+        ]
+      },
+      {
+        "id": "corporateGovernance",
+        "title": "Corporate Governance",
+        "points": [
+          "Designing Governance Frameworks",
+          "Designing Board Structure and Role Definition",
+          "Building Accountability Mechanisms",
+          "Risk Management and Compliance"
+        ]
+      },
+      {
+        "id": "marketingCommunication",
+        "title": "Marketing & Communication",
+        "points": [
+          "Marketing Strategies",
+          "Communication Strategies",
+          "Evaluating the Customer Journey",
+          "Building a Brand Strategy"
+        ]
+      },
+      {
+        "id": "researchStudies",
+        "title": "Research & Studies",
+        "points": [
+          "Analyzing Complex Data",
+          "Predictive Analytics",
+          "Market Research and Assessment",
+          "Reporting",
+          "Desktop and Field Studies"
+        ]
+      }
+    ]
+  },
+  "Promise": {
+    "eyebrow": "Our Promise",
+    "title": "We Only Commit When We Can Deliver Real Impact",
+    "body": "We focus on practical outcomes that leadership teams can act on immediately. Every engagement delivers clear priorities, accountable owners, and measurable milestones."
+  },
+  "Team": {
+    "eyebrow": "Our Leadership",
+    "title": "",
+    "description": "Our team blends consulting rigor with leadership experience across financial services, healthcare, and technology.",
+    "photoPlaceholder": "Photo coming soon",
+    "members": [
+      {
+        "name": "Amira Ren",
+        "role": "Managing Partner",
+        "bio": "Former COO and transformation leader across global service firms.",
+        "image": ""
+      },
+      {
+        "name": "Jules Becker",
+        "role": "Strategy Partner",
+        "bio": "Market strategy and competitive intelligence specialist.",
+        "image": ""
+      },
+      {
+        "name": "Priya Shah",
+        "role": "Operations Partner",
+        "bio": "Operational excellence and governance advisor for scale-ups.",
+        "image": ""
+      }
+    ]
+  },
+  "Testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Client voices, coming soon.",
+    "subtitle": "We will be adding verified client feedback here as engagements conclude.",
+    "prev": "Prev",
+    "next": "Next",
+    "trustedBy": "Trusted by leading organizations",
+    "logoAlt": "Client logo {index}",
+    "items": [
+      {
+        "quote": "Testimonial coming soon.",
+        "name": "Confidential Client",
+        "title": "Chief Executive Officer",
+        "company": "Private Sector Organization"
+      },
+      {
+        "quote": "Testimonial coming soon.",
+        "name": "Confidential Client",
+        "title": "Board Chair",
+        "company": "Public Sector Entity"
+      },
+      {
+        "quote": "Testimonial coming soon.",
+        "name": "Confidential Client",
+        "title": "Chief Strategy Officer",
+        "company": "Technology Group"
+      }
+    ]
+  },
+  "Faqs": {
+    "eyebrow": "FAQs",
+    "title": "Please reach us at Info@tahoul.com if you cannot find an answer to your question.",
+    "items": [
+      {
+        "question": "What makes Tahoul different from other consulting firms?",
+        "answer": "At Tahoul, we take a personalized approach to consulting. We work closely with each client to understand their unique challenges and goals, and we develop customized solutions that meet their specific needs."
+      },
+      {
+        "question": "What are some of the industries that Tahoul has experience working with?",
+        "answer": "Tahoul has experience working with clients in a range of industries, including healthcare, finance, technology, and retail, among others."
+      },
+      {
+        "question": "What types of consulting services does Tahoul offer?",
+        "answer": "Tahoul offers a range of consulting services, including strategic planning, process improvement, organizational development, and change management."
+      }
+    ]
+  },
+  "Contact": {
+    "eyebrow": "Contact Us",
+    "mapTitle": "Tahoul location map",
+    "details": [
+      {
+        "type": "address",
+        "label": "Address",
+        "value": "6413 King Abdulaziz Rd, 13335, Al Arid, Riyadh 13335, Saudi Arabia"
+      },
+      {
+        "type": "email",
+        "label": "E-mail",
+        "value": "Info@tahoul.com"
+      },
+      {
+        "type": "phone",
+        "label": "Tel",
+        "value": "+966 56 222 0814"
+      }
+    ],
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email*",
+      "filesLabel": "Attach Files",
+      "submitLabel": "Send",
+      "recaptcha": "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply."
+    }
+  },
+  "Footer": {
+    "blurb": "At Tahoul, we create enduring value by partnering with leaders to shape resilient organizations and deliver measurable impact.",
+    "usefulLinks": "Useful Links",
+    "findUs": "Find us",
+    "faqs": "FAQs",
+    "copyright": "Copyright © 2025 Tahoul - All Rights Reserved."
+  }
+}

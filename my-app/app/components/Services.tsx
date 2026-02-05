@@ -1,10 +1,25 @@
 import type { ReactNode } from "react";
+import { useTranslations } from "next-intl";
 
-import { services } from "../content";
+type ServiceId =
+  | "strategy"
+  | "organizationalExcellence"
+  | "corporateGovernance"
+  | "marketingCommunication"
+  | "researchStudies";
+
+type ServiceItem = {
+  id: ServiceId;
+  title: string;
+  points: string[];
+};
 
 export default function Services() {
-  const serviceIcons: Record<string, ReactNode> = {
-    Strategy: (
+  const t = useTranslations("Services");
+  const services = t.raw("items") as ServiceItem[];
+
+  const serviceIcons: Record<ServiceId, ReactNode> = {
+    strategy: (
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -20,7 +35,7 @@ export default function Services() {
         <path d="M7.5 16h9c-.7-3-3-5-4.5-5s-3.8 2-4.5 5z" />
       </svg>
     ),
-    "Organizational Excellence": (
+    organizationalExcellence: (
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -39,7 +54,7 @@ export default function Services() {
         <circle cx="11" cy="17" r="2" />
       </svg>
     ),
-    "Corporate Governance": (
+    corporateGovernance: (
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -54,7 +69,7 @@ export default function Services() {
         <path d="M9 12l2 2 4-4" />
       </svg>
     ),
-    "Marketing & Communication": (
+    marketingCommunication: (
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -70,7 +85,7 @@ export default function Services() {
         <path d="M7 14v4a2 2 0 0 0 2 2h1" />
       </svg>
     ),
-    "Research & Studies": (
+    researchStudies: (
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -88,12 +103,12 @@ export default function Services() {
       </svg>
     ),
   };
-  const serviceBackgrounds: Record<string, string> = {
-    Strategy: "url('/strategy.png')",
-    "Organizational Excellence": "url('/excellence.png')",
-    "Corporate Governance": "url('/governance.png')",
-    "Marketing & Communication": "url('/marketing.png')",
-    "Research & Studies": "url('/research.png')",
+  const serviceBackgrounds: Record<ServiceId, string> = {
+    strategy: "url('/strategy.png')",
+    organizationalExcellence: "url('/excellence.png')",
+    corporateGovernance: "url('/governance.png')",
+    marketingCommunication: "url('/marketing.png')",
+    researchStudies: "url('/research.png')",
   };
 
   return (
@@ -105,14 +120,14 @@ export default function Services() {
             className="section-eyebrow fade-up uppercase tracking-[0.45em]"
             style={{ animationDelay: "0s" }}
           >
-            Our Services
+            {t("eyebrow")}
           </p>
         </div>
       </div>
       <div className="mt-10 flex flex-col gap-4 md:min-h-105 md:flex-row md:gap-6">
         {services.map((service, index) => (
           <article
-            key={service.title}
+            key={service.id}
             tabIndex={0}
             className="fade-up group relative flex-1 overflow-hidden rounded-3xl border border-[#0f1c27]/50 shadow-[0_18px_40px_rgba(15,28,39,0.2)] transition-[flex,transform,box-shadow] duration-500 ease-out hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sky)]/60 md:hover:flex-[2.6]"
             style={{ animationDelay: `${0.05 + index * 0.05}s` }}
@@ -121,7 +136,7 @@ export default function Services() {
               className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage:
-                  serviceBackgrounds[service.title] ||
+                  serviceBackgrounds[service.id] ||
                   "linear-gradient(135deg, rgba(47,84,118,0.85), rgba(15,28,39,0.9))",
               }}
             />
@@ -129,7 +144,7 @@ export default function Services() {
             <div className="relative z-10 flex h-full flex-col p-6 text-white md:p-8">
               <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center transition-all duration-400 ease-out group-hover:flex-none group-hover:justify-start group-hover:pt-2 group-focus-within:flex-none group-focus-within:justify-start group-focus-within:pt-2">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
-                  {serviceIcons[service.title]}
+                  {serviceIcons[service.id]}
                 </span>
                 <h3 className="font-display text-[clamp(1.1rem,1.5vw,1.65rem)] font-semibold leading-tight text-white">
                   {service.title}
@@ -137,7 +152,7 @@ export default function Services() {
               </div>
               <div className="mt-4 overflow-hidden transition-all duration-400 ease-out max-h-0 opacity-0 translate-y-3 group-hover:max-h-72 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:max-h-72 group-focus-within:opacity-100 group-focus-within:translate-y-0 max-md:max-h-none max-md:opacity-100 max-md:translate-y-0">
                 <ul className="space-y-2 text-center text-base font-semibold text-white">
-                  {service.items.map((item) => (
+                  {service.points.map((item) => (
                     <li key={item} className="flex items-center justify-start gap-3">
                       <span className="h-2.5 w-2.5 rounded-full bg-white" />
                       {item}

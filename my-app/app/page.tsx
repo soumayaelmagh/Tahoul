@@ -1,5 +1,5 @@
-import FullPageLanding from "./components/FullPageLanding";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <FullPageLanding />;
+  redirect("/en");
 }

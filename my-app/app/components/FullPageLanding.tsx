@@ -3,6 +3,7 @@
 import Image from "next/image";
 import type { MouseEvent } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import Background from "./Background";
 import Contact from "./Contact";
@@ -25,49 +26,45 @@ const SCROLL_LOCK_MS = 900;
 const baseSectionBackground =
   "linear-gradient(180deg, rgba(103, 181, 255, 0.08) 0%, rgba(47, 84, 118, 0.12) 100%)";
 
-const sectionsConfig = [
+const sectionMeta = [
   {
     id: "home",
-    label: "Home",
     navBackground: "url('/hero-v3.jpg')",
     navTone: "light",
   },
-  { id: "who-we-are", label: "Who We Are", navBackground: baseSectionBackground },
+  { id: "who-we-are", navBackground: baseSectionBackground },
   {
     id: "vision-mission",
-    label: "Vision & Mission",
     navBackground: baseSectionBackground,
     navTone: "light",
   },
-  { id: "services", label: "Services", navBackground: baseSectionBackground },
+  { id: "services", navBackground: baseSectionBackground },
   {
     id: "our-leadership",
-    label: "Our Leadership",
     navBackground: baseSectionBackground,
     navTone: "light",
   },
   {
     id: "our-promise",
-    label: "Our Promise",
     navBackground: baseSectionBackground,
   },
   {
     id: "testimonials",
-    label: "Testimonials",
     navBackground: baseSectionBackground,
     navTone: "light",
   },
-  { id: "faqs", label: "FAQs", navBackground: baseSectionBackground },
+  { id: "faqs", navBackground: baseSectionBackground },
   {
     id: "contact",
-    label: "Contact",
     navBackground: baseSectionBackground,
     navTone: "light",
   },
-  { id: "footer", label: "Footer", navBackground: baseSectionBackground },
+  { id: "footer", navBackground: baseSectionBackground },
 ];
 
 export default function FullPageLanding() {
+  const t = useTranslations("Sections");
+  const heroT = useTranslations("Hero");
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [navVisible, setNavVisible] = useState(false);
@@ -79,9 +76,26 @@ export default function FullPageLanding() {
   const rafRef = useRef<number | null>(null);
   const navHideTimerRef = useRef<number | null>(null);
 
+  const sectionLabels = t.raw("items") as Array<{ id: string; label: string }>;
+
+  const labelMap = useMemo(() => {
+    const map = new Map<string, string>();
+    sectionLabels.forEach((item) => map.set(item.id, item.label));
+    return map;
+  }, [sectionLabels]);
+
+  const sectionsConfig = useMemo(
+    () =>
+      sectionMeta.map((section) => ({
+        ...section,
+        label: labelMap.get(section.id) ?? section.id,
+      })),
+    [labelMap]
+  );
+
   const numbers = useMemo(
     () => sectionsConfig.map((_, index) => String(index + 1).padStart(2, "0")),
-    []
+    [sectionsConfig]
   );
 
   const activeSection = sectionsConfig[activeIndex] ?? sectionsConfig[0];
@@ -435,7 +449,7 @@ export default function FullPageLanding() {
 
       <nav
         className={`pp-nav ${navVisible ? "is-visible" : ""}`}
-        aria-label="Section navigation"
+        aria-label={t("navLabel")}
       >
         <div className="pp-nav-inner">
           <div className="pp-nav-current" aria-hidden="true">
@@ -489,7 +503,7 @@ export default function FullPageLanding() {
         >
           <Image
             src="/hero-v3.jpg"
-            alt="Tahoul consulting leadership"
+            alt={heroT("imageAlt")}
             fill
             className="object-cover"
             sizes="100vw"

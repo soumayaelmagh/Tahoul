@@ -31,6 +31,12 @@ body {
   overflow-x: hidden;
 }
 
+:root[dir="rtl"] body {
+  letter-spacing: 0;
+  direction: rtl;
+  text-align: start;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -55,6 +61,11 @@ html {
   text-transform: uppercase;
 }
 
+:root[dir="rtl"] .section-eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: none;
+}
+
 .bg-eyebrow {
   color: #ffffff;
   opacity: 0.8;
@@ -66,6 +77,11 @@ html {
   font-weight: 600;
   line-height: 1.7;
   max-width: 60ch;
+}
+
+.ltr-number {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .logo-marquee {
