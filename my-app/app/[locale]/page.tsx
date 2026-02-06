@@ -35,11 +35,20 @@ export async function generateMetadata({
       locale: locale === "ar" ? "ar_SA" : "en_US",
       siteName: "Tahoul",
       type: "website",
+      images: [
+        {
+          url: "/og-tahoul.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
+      images: ["/og-tahoul.png"],
     },
   };
 }

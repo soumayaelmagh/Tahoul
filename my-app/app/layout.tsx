@@ -39,9 +39,18 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Tahoul",
     url: "https://tahoul.com",
+    images: [
+      {
+        url: "/og-tahoul.png",
+        width: 1200,
+        height: 630,
+        alt: "Tahoul Management Consultancy",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
+    images: ["/og-tahoul.png"],
   },
 };
 
